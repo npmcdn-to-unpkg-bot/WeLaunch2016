@@ -1120,6 +1120,7 @@ body {
   font-family: "CynthoSlabPro-Regular", serif;
   font-weight: normal;
   line-height: 1.4;
+  font-size: 1.6rem;
   color: #1d1d1b;
   background-color: #FAFAFA;
   -webkit-font-smoothing: antialiased;
@@ -6412,6 +6413,11 @@ section img {
   border-right: 1px solid #dbdbd8; }
 
 /* Single Case Study */
+.single-casestudy .hero-lg p {
+  max-width: 55%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .single-casestudy #case-study .container-fluid {
   background-color: white; }
 
@@ -6538,21 +6544,28 @@ blockquote {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   #blog .media .img-wrap {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    width: 20%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; }
+    display: none; }
   #blog .media .media-body {
-    padding-left: 22%; }
+    text-align: center; }
   #blog .media:hover {
     opacity: 0.8;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
+  @media (min-width: 768px) {
+    #blog .media .img-wrap {
+      display: table-cell;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      bottom: 10px;
+      width: 20%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    #blog .media .media-body {
+      padding-left: 22%;
+      text-align: left; } }
 
 #blog article:nth-child(odd) .media {
   border: 1px solid #eaeaea; }

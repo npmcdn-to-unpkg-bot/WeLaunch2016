@@ -17,7 +17,8 @@ get_header(); ?>
 	<div class="hero-lg" style="background-image: url('<?php the_field('hero_banner'); ?>');">
 		<div class="hero-lg__overlay">
 			<em><?php the_field('discipline'); ?></em>
-			<h1><?php the_title(); ?></h1>
+			<?php the_field('hero_copy'); ?>
+			<!-- <h1><?php //the_title(); ?></h1> -->
 		</div>
 	</div>
 	<section>
@@ -98,7 +99,7 @@ get_header(); ?>
 	      'orderby' => 'rand',
 	      'post__not_in'=>array($post->ID)
 	   ) ); ?>
-	<section class="clearfix grey">
+	<section class="container-fluid grey">
 		<h3>Related Projects</h3>
 		<div class="row">
 	   <?php if($second_query->have_posts()) {
