@@ -5892,9 +5892,8 @@ button.close {
     .hero-lg {
       height: 600px; }
       .hero-lg h1 {
-        max-width: 75%;
-        margin-left: auto;
-        margin-right: auto; } }
+        font-size: 36px;
+        font-size: 3.6rem; } }
   @media (min-width: 1200px) {
     .hero-lg {
       height: 600px; }
@@ -6275,7 +6274,7 @@ section img {
   border-radius: 0; }
 
 .nav.navbar-nav.navbar-right {
-  margin-top: 18px;
+  margin-top: 20px;
   text-align: center; }
   @media (min-width: 992px) {
     .nav.navbar-nav.navbar-right {
@@ -6290,8 +6289,8 @@ section img {
   padding-top: 0;
   display: inline-block;
   padding: 1em;
-  font-size: 17px;
-  font-size: 1.7rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
@@ -6356,14 +6355,17 @@ section img {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   .navbar-default .navbar-brand img {
-    max-width: 150px;
+    max-width: 130px;
     -webkit-filter: invert(100%);
     filter: invert(100%); }
-  .navbar-default .navbar-brand:hover {
-    opacity: 0.75;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s; }
+  @media (min-width: 992px) {
+    .navbar-default .navbar-brand img {
+      max-width: 150px; }
+    .navbar-default .navbar-brand:hover {
+      opacity: 0.75;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; } }
 
 /* Homepage */
 .home .hero-lg {
@@ -6377,18 +6379,17 @@ section img {
     text-align: left;
     justify-content: center;
     align-items: flex-start; }
-    .home .hero-lg__overlay h2 {
-      max-width: 55%; }
     .home .hero-lg__overlay .lead {
       max-width: 50%;
       font-size: 22px;
-      font-size: 2.2rem; }
-    .home .hero-lg__overlay h1 {
-      margin-bottom: 28px; }
-    .home .hero-lg__overlay .underline {
-      border-bottom: 5px solid #ffdb12;
-      display: inline-block;
-      padding-bottom: 5px; } }
+      font-size: 2.2rem; } }
+
+@media (min-width: 1200px) {
+  .home .hero-lg__overlay h1 {
+    margin-bottom: 28px;
+    font-size: 52px;
+    font-size: 5.2rem;
+    max-width: 55%; } }
 
 #home-latest .panel.panel-default {
   border-radius: 0;
