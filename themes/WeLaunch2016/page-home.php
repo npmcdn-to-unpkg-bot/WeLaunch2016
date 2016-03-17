@@ -41,7 +41,7 @@ get_header(); ?>
 								<?php the_sub_field('hero_copy'); ?>
 							</br>
 								<?php if($i === 0) { ?>
-									<a href="work/" class="btn btn-primary invert">Case Studies</a>
+									<a href="work/" class="btn btn-primary invert">See Our Case Studies</a>
 								<?php } else { ?>
 									<a href="<?php the_sub_field('button_link'); ?>" class="btn btn-primary invert">View Project</a>
 								<?php } ?>

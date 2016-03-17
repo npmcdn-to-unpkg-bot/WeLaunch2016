@@ -33,7 +33,7 @@ get_header(); ?>
 					<div class="media-body">
 						<h2><?php the_title(); ?></h2>
 						<p><?php the_excerpt(); ?></p>
-						<a class="btn btn-primary pull-right" href="<?php the_permalink(); ?>">Read more...</a>
+						<a class="btn btn-primary" href="<?php the_permalink(); ?>">Read more...</a>
 					</div>
 				</div>
 			</section>

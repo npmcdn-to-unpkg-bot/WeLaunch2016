@@ -24,7 +24,7 @@ get_header(); ?>
 	<section class="clearfix sr">
 		<div class="no-gutter">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
-				<div class="pad-lg">
+				<div class="pad">
 					<h3>About Us</h3>
 					<?php the_field('about_us'); ?>
 				</div>

@@ -15,13 +15,13 @@ Tags:
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
+# Settings - Variables & Mixins
 
-# Global & Typography
+# Scaffolding - Normalize, Bootstrap & Patterns
 
-# Custom
+# Global - Styles & Typography
 
-# Forms
+# Custom Styles & Overides
 
 # Responsive
 --------------------------------------------------------------*/
@@ -1123,8 +1123,12 @@ body {
   font-size: 1.6rem;
   color: #1d1d1b;
   background-color: #FAFAFA;
+  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  @media (min-width: 992px) {
+    body {
+      text-align: left; } }
 
 input,
 button,
@@ -5887,20 +5891,20 @@ button.close {
   height: 550px;
   position: relative;
   background-size: cover;
+  background-position: center;
   margin-bottom: 10px; }
+  @media (min-width: 768px) {
+    .hero-lg h1 {
+      max-width: 85%;
+      margin-bottom: 28px;
+      margin-top: 21px; } }
   @media (min-width: 992px) {
     .hero-lg {
       height: 600px; }
       .hero-lg h1 {
-        font-size: 36px;
-        font-size: 3.6rem; } }
-  @media (min-width: 1200px) {
-    .hero-lg {
-      height: 600px; }
-      .hero-lg h1 {
-        max-width: 55%;
-        margin-left: 0;
-        margin-right: 0; } }
+        font-size: 46px;
+        font-size: 4.6rem;
+        max-width: 55%; } }
 
 .hero-md {
   width: 100%;
@@ -5957,7 +5961,10 @@ button.close {
     font-size: 18px;
     font-size: 1.8rem; }
   .hero-lg__overlay em {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 1.4rem; }
 
 .hero-overlay-center {
   display: flex;
@@ -6085,8 +6092,8 @@ a {
     transition: all 0.3s; }
 
 a, span, em {
-  font-size: 14px;
-  font-size: 1.4rem; }
+  font-size: 16px;
+  font-size: 1.6rem; }
 
 .btn.btn-primary {
   border-radius: 0;
@@ -6155,9 +6162,6 @@ blockquote {
     z-index: 0;
     opacity: 0.3; }
 
-/*--------------------------------------------------------------
-# Custom
---------------------------------------------------------------*/
 .scrolloff {
   pointer-events: none; }
 
@@ -6193,6 +6197,13 @@ section.grey {
 section img {
   width: 100%; }
 
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+.carousel-indicators li {
+  border-radius: 0;
+  border-width: 2px; }
+
 .folio-item {
   height: 322px;
   position: relative;
@@ -6223,6 +6234,7 @@ section img {
   -ms-justify-content: center;
   -ms-align-items: flex-start;
   -ms-flex-direction: column;
+  text-align: left;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
@@ -6380,16 +6392,16 @@ section img {
     justify-content: center;
     align-items: flex-start; }
     .home .hero-lg__overlay .lead {
-      max-width: 50%;
+      max-width: 35%;
       font-size: 22px;
       font-size: 2.2rem; } }
 
 @media (min-width: 1200px) {
   .home .hero-lg__overlay h1 {
     margin-bottom: 28px;
-    font-size: 52px;
-    font-size: 5.2rem;
-    max-width: 55%; } }
+    font-size: 50px;
+    font-size: 5rem;
+    max-width: 50%; } }
 
 #home-latest .panel.panel-default {
   border-radius: 0;
@@ -6407,7 +6419,14 @@ section img {
   #home-latest .panel.panel-default a {
     position: absolute;
     bottom: 2em;
-    right: 2em; }
+    right: 8em;
+    left: 8em;
+    margin: auto; }
+    @media (min-width: 992px) {
+      #home-latest .panel.panel-default a {
+        right: 2em;
+        left: inherit;
+        margin: inherit; } }
 
 #home-latest .panel.panel-default.block-4 {
   border-left: 1px solid #dbdbd8;
@@ -6415,9 +6434,12 @@ section img {
 
 /* Single Case Study */
 .single-casestudy .hero-lg p {
-  max-width: 55%;
+  max-width: 85%;
   margin-left: auto;
   margin-right: auto; }
+  @media (min-width: 992px) {
+    .single-casestudy .hero-lg p {
+      max-width: 55%; } }
 
 .single-casestudy #case-study .container-fluid {
   background-color: white; }
@@ -6438,17 +6460,27 @@ section img {
 .single-casestudy .sectors span {
   background-color: #e7e7e7;
   padding: .5em 1em;
-  float: left;
+  display: block;
   margin: 2.5px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
+  @media (min-width: 992px) {
+    .single-casestudy .sectors span {
+      float: left;
+      display: inline-block; } }
   .single-casestudy .sectors span:hover {
     background-color: #ffdb12;
     color: #1d1d1b;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
+
+.read-more + [data-readmore-toggle], .read-more[data-readmore] {
+  display: inline-block !important; }
+  @media (min-width: 992px) {
+    .read-more + [data-readmore-toggle], .read-more[data-readmore] {
+      display: block; } }
 
 /* About Us */
 #about-us-clients h2 {
@@ -6588,6 +6620,13 @@ blockquote {
   background-color: #e7e7e7;
   border: 1px solid #e7e7e7; }
 
+#blog .btn {
+  margin-top: 3rem;
+  float: none; }
+  @media (min-width: 992px) {
+    #blog .btn {
+      float: right; } }
+
 /* Contact */
 .page-contact #contact-info p {
   margin-top: 1em;
@@ -6648,6 +6687,7 @@ blockquote {
   #footer-services ul {
     list-style-type: none;
     margin-bottom: 0;
+    padding-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1); }
   #footer-services ul li {
     display: inline-block;
