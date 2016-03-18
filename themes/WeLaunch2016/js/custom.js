@@ -100,9 +100,9 @@ $(document).ready(function () {
     });
 });
 
-//scrollReveal
-// window.sr = ScrollReveal();
-// sr.reveal('.sr');
+$('#filter-toggle').click(function(e) {
+	$(this).toggleClass('rotate-180');
+});
 
 /*!
  * @preserve

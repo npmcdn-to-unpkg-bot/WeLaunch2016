@@ -14,15 +14,12 @@
 
 get_header(); ?>
 
-<div class="hero-lg" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/01/services.jpg');">
+<div class="hero-lg" style="background-image: url('<?php the_field('hero_img'); ?>');'">
 	<div class="hero-lg__overlay">
 		<em><?php the_title(); ?></em>
-		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+		<h1><?php the_field('hero_header'); ?></h1>
 	</div>
 </div>
-<!-- <iframe id="vimeo-player" src="https://player.vimeo.com/video/133439646?api=1" width="100%" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-
-
 <section class="clearfix sr pad" id="services-block">
 	<div class="clearfix">
 		<div class="row">

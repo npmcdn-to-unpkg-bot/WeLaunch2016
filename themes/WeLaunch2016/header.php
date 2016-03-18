@@ -19,6 +19,19 @@
 
 <?php wp_head(); ?>
 
+<script type="text/javascript">
+    (function() {
+        var path = '//easy.myfonts.net/v2/js?sid=227095(font-family=Nexa+Regular)&sid=227099(font-family=Nexa+Bold)&sid=227102(font-family=Nexa+Light)&key=CJHWCmZyKC',
+            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+            trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = protocol + path;
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,7 +46,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php echo content_url(); ?>/uploads/2016/02/logo-new.png" class="img-responsive"></a>
+	      <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php echo content_url(); ?>/uploads/2016/03/we-launch-logox2-1.png" class="img-responsive"></a>
 	    </div>
 	    <?php
 	        wp_nav_menu( array(

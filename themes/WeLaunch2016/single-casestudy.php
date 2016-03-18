@@ -16,15 +16,12 @@ get_header(); ?>
 <main id="case-study">
 	<div class="hero-lg" style="background-image: url('<?php the_field('hero_banner'); ?>');">
 		<div class="hero-lg__overlay">
-			<em><?php the_field('discipline'); ?></em>
 			<?php the_field('hero_copy'); ?>
-			<!-- <h1><?php //the_title(); ?></h1> -->
 		</div>
 	</div>
 	<section>
-		<div class="row pad white-bg" id="case-study-info">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="case-study-wrap">
-				<!-- <h1><?php //the_title(); ?></h1> -->
+		<div class="row white-bg" id="case-study-info">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7" id="case-study-wrap">
 				<h3>The Brief</h3>
 				<?php the_field('the_brief'); ?>
 				<div class="read-more">
@@ -46,29 +43,29 @@ get_header(); ?>
 					?>
 				</div>
 				<h3>Deliverables</h3>
-				<div class="sectors clearfix">
+				<div class="deliverables clearfix">
 					<?php
 					   $terms = get_the_terms($post->ID, "deliverables");
 						 if ( !empty( $terms ) && !is_wp_error( $term ) ){
 							 foreach ( $terms as $term ) {
-							   echo '<span>' . $term->name . '</span>';
+							   echo '<span>' . $term->name . ', </span>';
 
 							 }
 						 }
 					  ?>
 				</div>
 				<?php
-				$posts = get_field('testimonial');
-				if( $posts ): ?>
-				<h3>Testimonials</h3>
-				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+				//$posts = get_field('testimonial');
+				//if( $posts ): ?>
+				<!-- <h3>Testimonials</h3>
+				    <?php //foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
 				        <blockquote>
-							<?php the_field('quote'); ?>
+							<?php //the_field('quote'); ?>
 						</blockquote>
-				    <?php endforeach; ?>
+				    <?php //endforeach; ?>
 				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-				<?php  endif; ?>
+				<?php  //endif; ?> -->
 			</div>
 		</div>
 	</section>

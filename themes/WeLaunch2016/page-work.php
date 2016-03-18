@@ -13,18 +13,18 @@
  */
 
 get_header(); ?>
-<div class="hero-lg" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/02/wl-services-banner.jpg');">
-	<div class="hero-lg__overlay">
-		<em><?php the_title(); ?></em>
-		<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h1>
+
+<section class="work-filter" >
+	<div class="row">
+		<h4>Filter By</h4>
+		<span class="fa fa-chevron-up pull-right" id="filter-toggle" data-toggle="collapse" data-target="#list-wrap"></span>
 	</div>
-</div>
-<section class="work-filter clearfix">
-	<ul class="work-filter-list">
-		<!-- <li><strong>Filter By:</strong></li> -->
-		<li class="active"><a class="filter-btn" data-filter="*">All</a></li>
-		<li><a title="Discipline" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="true">Discipline <span class="caret"></span></a>
-			<ul role="menu" class="dropdown-menu discipline" role="tablist" >
+	<div class="row collapse in" id="list-wrap" aria-expanded="true">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<p><strong>Discipline</strong></p>
+			<ul class="work-filter-list clearfix">
+				<!-- <li><strong>Filter By:</strong></li> -->
+				<li><a class="filter-btn" data-filter="*"><strong>All</strong></a></li>
 				<li><a class="filter-btn" data-filter=".Branding">Branding</a></li>
 				<li><a class="filter-btn" data-filter=".Digital">Digital</a></li>
 				<li><a class="filter-btn" data-filter=".Motion">Motion</a></li>
@@ -34,10 +34,10 @@ get_header(); ?>
 				<li><a class="filter-btn" data-filter=".Events">Destination</a></li>
 				<li><a class="filter-btn" data-filter=".Events">Internal Comms</a></li>
 			</ul>
-		</li>
-		<li>
-			<a title="Sector" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="true">Sector <span class="caret"></span></a>
-			<ul role="menu" class="dropdown-menu discipline" role="tablist" >
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<p><strong>Sector</strong></p>
+			<ul class="work-filter-list clearfix">
 				<!-- List all Industry Sectors -->
 				<?php
 				$taxonomy = 'industry_sectors';
@@ -49,21 +49,12 @@ get_header(); ?>
 				}
 				?>
 			</ul>
-		</li>
-		<!-- <li>
-			<a title="Sector" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="true">Yearly <span class="caret"></span></a>
-			<ul role="menu" class="dropdown-menu discipline" role="tablist" >
-				<li><a class="filter-btn" data-filter=".2016">2016</a></li>
-				<li><a class="filter-btn" data-filter=".2015">2015</a></li>
-				<li><a class="filter-btn" data-filter=".2014">2014</a></li>
-				<li><a class="filter-btn" data-filter=".2013">2013</a></li>
-			</ul>
-		</li> -->
-	</ul>
+		</div>
+	</div>
 </section>
 
 <!-- Portfolio Blocks -->
-<section class="pad">
+<section class="pad" id="work-grid">
 <div id="portfolio" class="row filter-grid">
 	<?php $the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 	<?php query_posts($query_string . '&cat=-163'); ?>
