@@ -6583,37 +6583,20 @@ blockquote {
     margin-top: 1em; }
 
 /* Blog */
-#blog .media {
-  padding: 2em;
-  position: relative;
-  margin-bottom: 10px;
-  opacity: 1;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s; }
-  #blog .media .img-wrap {
-    display: none; }
-  #blog .media .media-body {
-    text-align: center; }
-  #blog .media:hover {
-    opacity: 0.8;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s; }
-  @media (min-width: 768px) {
-    #blog .media .img-wrap {
-      display: table-cell;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      bottom: 10px;
-      width: 20%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center; }
-    #blog .media .media-body {
-      padding-left: 22%;
-      text-align: left; } }
+#blog-wrap {
+  margin-top: 10px; }
+
+#blog .panel {
+  border-radius: 0; }
+
+#blog .panel-heading {
+  height: 200px;
+  border-radius: 0;
+  border: 0; }
+
+@media (min-width: 992px) {
+  #blog .panel-body {
+    padding-bottom: 8rem; } }
 
 #blog article:nth-child(odd) .media {
   border: 1px solid #eaeaea; }
@@ -6627,7 +6610,9 @@ blockquote {
   float: none; }
   @media (min-width: 992px) {
     #blog .btn {
-      float: right; } }
+      right: 15px;
+      position: absolute;
+      bottom: 30px; } }
 
 /* Contact */
 .page-contact #contact-info p {
