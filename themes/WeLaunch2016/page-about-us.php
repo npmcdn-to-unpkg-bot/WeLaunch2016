@@ -14,12 +14,13 @@
 
 get_header(); ?>
 
-	<div class="hero-lg" id="" style="background-image: url('http://localhost/WeLaunch/wp-content/uploads/2016/01/about-us.jpg');">
-		<div class="hero-lg__overlay">
-			<em><?php the_title(); ?></em>
-			<h1>We Work With People, Brands and Organisations That Inspire Us</h1>
-		</div>
+<div class="hero-lg" id="" style="background-image: url('http://localhost/WeLaunch/wp-content/uploads/2016/01/about-us.jpg');">
+	<div class="hero-lg__overlay">
+		<em><?php the_title(); ?></em>
+		<h1>We Work With People, Brands and Organisations That Inspire Us</h1>
 	</div>
+</div>
+
 <main id="about-us" class="container">
 	<section class="clearfix sr">
 		<div class="no-gutter">

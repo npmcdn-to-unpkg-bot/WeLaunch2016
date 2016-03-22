@@ -13,23 +13,21 @@
  */
 
 get_header(); ?>
-<main id="case-study">
-	<div class="hero-lg" style="background-image: url('<?php the_field('hero_banner'); ?>');">
-		<div class="hero-lg__overlay">
-			<?php the_field('hero_copy'); ?>
-		</div>
+
+<div class="hero-lg" style="background-image: url('<?php the_field('hero_banner'); ?>');">
+	<div class="hero-lg__overlay">
+		<?php the_field('hero_copy'); ?>
 	</div>
+</div>
+
+<main id="case-study" class="container">
 	<section>
-		<div class="row white-bg" id="case-study-info">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7" id="case-study-wrap">
+		<div class="row white-bg" id="casestudy-info">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
 				<h3>The Brief</h3>
 				<?php the_field('the_brief'); ?>
-				<div class="read-more">
-					<h3>The Solution</h3>
-					<?php the_field('the_solution'); ?>
-				</div>
 			</div>
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 pull-right">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 pull-right">
 				<h3>Industry Sectors</h3>
 				<div class="sectors clearfix">
 					<?php
@@ -42,38 +40,51 @@ get_header(); ?>
 						}
 					?>
 				</div>
-				<h3>Deliverables</h3>
-				<div class="deliverables clearfix">
-					<?php
-					   $terms = get_the_terms($post->ID, "deliverables");
-						 if ( !empty( $terms ) && !is_wp_error( $term ) ){
-							 foreach ( $terms as $term ) {
-							   echo '<span>' . $term->name . ', </span>';
-
-							 }
-						 }
-					  ?>
-				</div>
-				<?php
-				//$posts = get_field('testimonial');
-				//if( $posts ): ?>
-				<!-- <h3>Testimonials</h3>
-				    <?php //foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-				        <?php setup_postdata($post); ?>
-				        <blockquote>
-							<?php //the_field('quote'); ?>
-						</blockquote>
-				    <?php //endforeach; ?>
-				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-				<?php  //endif; ?> -->
 			</div>
 		</div>
 	</section>
-	<section class="clearfix pad">
-		<div class="img-wrap">
-			<?php the_field('images'); ?>
+
+	<section id="casestudy-content">
+		<?php if( have_rows('content') ): ?>
+
+		<div class="row">
+			<?php  while ( have_rows('content') ) : the_row(); ?>
+
+			<?php if( get_sub_field('text_box') ): ?>
+				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+					<div class="lg-pad">
+						<?php the_sub_field('text_box'); ?>
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if( get_sub_field('full_image') ): ?>
+				<div class="col-xs-12">
+					<img src="<?php the_sub_field('full_image'); ?>" class="img-responsive">
+				</div>
+			<?php endif; ?>
+
+			<?php if( get_sub_field('2col_left') ): ?>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<img src="<?php the_sub_field('2col_left'); ?>" class="img-responsive">
+				</div>
+			<?php endif; ?>
+
+			<?php if( get_sub_field('2col_right') ): ?>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<img src="<?php the_sub_field('2col_right'); ?>" class="img-responsive">
+				</div>
+			<?php endif; ?>
+
+			<?php endwhile; ?>
 		</div>
+		<?php endif; ?>
 	</section>
+
+
+
+
+
 
 	<?php //Get array of terms
 	$terms = get_the_terms( $post->ID , 'industry_sectors', 'string');
@@ -96,6 +107,7 @@ get_header(); ?>
 	      'orderby' => 'rand',
 	      'post__not_in'=>array($post->ID)
 	   ) ); ?>
+
 	<section class="container-fluid grey">
 		<h3>Related Projects</h3>
 		<div class="row">

@@ -71,7 +71,7 @@ get_header(); ?>
 						<div class="folio-item-overlay">
 							<h4><?php the_title(); ?></h4>
 							<p>
-								<?php echo wp_trim_words( get_field('short_description'), 25, '...' ); ?>
+								<?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
 							</p>
 						</div>
 					</div>

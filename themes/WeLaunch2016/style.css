@@ -6120,6 +6120,27 @@ blockquote {
     z-index: 0;
     opacity: 0.3; }
 
+.lg-pad {
+  padding: 1.5rem; }
+
+.lg-pad-y {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
+
+.lg-pad-x {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
+
+@media (min-width: 992px) {
+  .lg-pad {
+    padding: 3rem; }
+  .lg-pad-y {
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
+  .lg-pad-x {
+    padding-left: 3rem;
+    padding-right: 3rem; } }
+
 .scrolloff {
   pointer-events: none; }
 
@@ -6129,10 +6150,9 @@ blockquote {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1400px;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px; } }
+    width: 1220px;
+    padding-left: 1rem;
+    padding-right: 1rem; } }
 
 [class^="col-"] {
   padding-left: .5rem;
@@ -6144,10 +6164,7 @@ blockquote {
 
 section {
   background-color: white;
-  margin-bottom: 10px;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-bottom: 10px; }
 
 section.grey {
   background-color: #FAFAFA; }
@@ -6155,29 +6172,26 @@ section.grey {
 section img {
   width: 100%; }
 
-/*--------------------------------------------------------------
-# Custom
---------------------------------------------------------------*/
 .carousel-indicators li {
   border-radius: 0;
   border-width: 2px; }
 
 .folio-item {
-  height: 322px;
+  height: 272px;
   position: relative;
   margin-bottom: 10px;
   background-size: cover; }
 
 .folio-item-overlay {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(16, 16, 16, 0.75);
   background-blend-mode: multiply;
   color: white;
-  padding: 0 3em;
+  padding: 0 3rem;
   opacity: 1;
   cursor: pointer;
   display: flex;
@@ -6397,14 +6411,26 @@ section img {
     .single-casestudy .hero-lg p {
       max-width: 45%; } }
 
+.single-casestudy #casestudy-info {
+  padding: 1.5rem; }
+
+@media (min-width: 992px) {
+  .single-casestudy #casestudy-info {
+    padding: 3rem; }
+  .single-casestudy #casestudy-info h3 {
+    margin-top: 0; }
+  .single-casestudy #casestudy-info p:last-of-type {
+    margin-bottom: 0; } }
+
 .single-casestudy #case-study .container-fluid {
   background-color: white; }
 
-.single-casestudy .img-wrap img {
-  width: 100%;
-  float: left;
-  height: auto;
-  margin: 5px; }
+.single-casestudy #casestudy-content img {
+  margin-bottom: 1rem; }
+
+.single-casestudy #casestudy-content p {
+  font-size: 16px;
+  font-size: 1.6rem; }
 
 @media (min-width: 992px) {
   .single-casestudy .img-wrap img {
@@ -6423,7 +6449,6 @@ section img {
   transition: all 0.3s; }
   @media (min-width: 992px) {
     .single-casestudy .sectors span {
-      float: left;
       display: inline-block; } }
   .single-casestudy .sectors span:hover {
     background-color: #ffdb12;
@@ -6482,23 +6507,23 @@ blockquote {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   .work-filter p {
-    font-size: 16px;
-    font-size: 1.6rem;
-    border-bottom: 2px solid #1d1d1b;
+    font-size: 14px;
+    font-size: 1.4rem;
     display: inline-block;
-    margin-left: 15px; }
+    font-family: 'Nexa Bold'; }
   .work-filter h4 {
     margin-bottom: 22.5px;
     margin-top: 3rem;
-    display: inline-block;
     float: left; }
   .work-filter .fa {
     margin-top: 3rem;
+    margin-left: 1.5rem;
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    cursor: pointer; }
   .work-filter .fa.rotate-180 {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
@@ -6508,15 +6533,15 @@ blockquote {
 
 .work-filter-list {
   list-style-type: none;
-  padding-left: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-left: 0;
+  padding-bottom: 3rem;
   margin-bottom: 0; }
   .work-filter-list > li {
     display: block;
     float: left;
     width: 100%;
-    padding-top: .25em;
-    padding-bottom: .25em; }
+    padding-top: .15em;
+    padding-bottom: .15em; }
     @media (min-width: 992px) {
       .work-filter-list > li {
         width: 50%; } }
@@ -6526,13 +6551,14 @@ blockquote {
       cursor: pointer;
       border-bottom: 2px solid transparent;
       padding-bottom: 5px;
-      font-size: 14px;
-      font-size: 1.4rem;
+      font-size: 13px;
+      font-size: 1.3rem;
       -webkit-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s; }
       .work-filter-list > li a:hover {
         border-color: #ffdb12;
+        color: #1d1d1b;
         text-decoration: none;
         -webkit-transition: all 0.3s;
         -o-transition: all 0.3s;

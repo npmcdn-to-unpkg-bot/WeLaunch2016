@@ -18,7 +18,7 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 
 $( document ).ready(function() {
 	$('.read-more').readmore({
-		collapsedHeight: 180,
+		collapsedHeight: 200,
 		speed: 300,
 		moreLink: '<a style="max-width:9em;margin-top:1.5em;" class="btn btn-primary" href="#">Read more</a>',
 		lessLink: '<a style="max-width:9em;margin-top:1.5em;" class="btn btn-primary" href="#">Close</a>',
