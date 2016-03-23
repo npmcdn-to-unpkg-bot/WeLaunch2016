@@ -47,7 +47,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<img src="<?php echo content_url(); ?>/uploads/2016/03/wl-contact-hello.jpg" class="pull-right img-responsive" id="feature-two-up">
+				<img src="<?php echo content_url(); ?>/uploads/2016/03/WeLaunch_Contact_us_sayhello_v2.jpg" class="pull-right img-responsive" id="feature-two-up">
 			</div>
 		</div>
 	</section>

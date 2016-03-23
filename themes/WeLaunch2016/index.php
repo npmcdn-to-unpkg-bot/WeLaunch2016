@@ -20,13 +20,13 @@ get_header(); ?>
 		<?php $the_query = new WP_Query( array('posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 		<?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
-			<article class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="post-<?php the_ID(); ?>">
+			<article class="col-xs-12 col-sm-12 col-md-6 col-lg-4" id="post-<?php the_ID(); ?>">
 				<div class="panel eq-height sr">
 					<div class="panel-heading img-responsive" style="background-image: url('<?php echo $image ?>');"></div>
 					<div class="panel-body">
-						<h2><?php the_title(); ?></h2>
-						<p><?php the_excerpt(); ?></p>
-						<a class="btn btn-primary" href="<?php the_permalink(); ?>">Read more...</a>
+						<h3><?php the_title(); ?></h3>
+						<p><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+						<a href="<?php the_permalink(); ?>"><strong>Read more...</strong></a>
 					</div>
 				</div>
 			</article>
