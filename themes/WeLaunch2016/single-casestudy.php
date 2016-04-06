@@ -109,7 +109,9 @@ get_header(); ?>
 	   ) ); ?>
 
 	<section class="container-fluid grey">
-		<h3>Related Projects</h3>
+		<div class="lg-pad-y text-center">
+			<a class="section-title">Related Projects</a>
+		</div>
 		<div class="row">
 	   <?php if($second_query->have_posts()) {
 	     while ($second_query->have_posts() ) : $second_query->the_post(); ?>

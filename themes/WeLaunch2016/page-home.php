@@ -41,7 +41,7 @@ get_header(); ?>
 								<?php the_sub_field('hero_copy'); ?>
 							</br>
 								<?php if($i === 0) { ?>
-									<a href="work/" class="btn btn-primary invert">See Our Case Studies</a>
+									<a href="<?php echo home_url('/services'); ?>" class="btn btn-primary invert">Learn more</a>
 								<?php } else { ?>
 									<a href="<?php the_sub_field('button_link'); ?>" class="btn btn-primary invert">View Project</a>
 								<?php } ?>
@@ -55,50 +55,54 @@ get_header(); ?>
 		</div>
 	<?php endif; ?>
 </div>
-<main id="wrapper" class="container">
-<!-- Portfolio Blocks -->
-<div id="portfolio" class="row">
-	<?php //$the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => 12, 'order' => 'DESC') ); ?>
-	<?php //while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+<main id="wrapper" class="container" style="background-color:white;">
+	<!-- Portfolio Blocks -->
+	<div id="portfolio" class="row">
+		<?php $posts = get_field('featured_projects'); ?>
+		<?php if( $posts ): ?>
+		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+			<?php setup_postdata($post); ?>
+				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+					<a href="<?php the_permalink(); ?>">
+						<div class="folio-item" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');">
+							<div class="folio-item-overlay">
+								<h4><?php the_title(); ?></h4>
+								<p>
+									<?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
+								</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			<?php endforeach; ?>
+			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		<?php endif; ?>
+	</div>
+	<div class="lg-pad-y text-center">
+		<a href="#" class="btn btn-primary">See Our Case Studies</a>
+	</div>
 
-	<?php $posts = get_field('featured_projects'); ?>
-	<?php if( $posts ): ?>
-	<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-		<?php setup_postdata($post); ?>
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-				<a href="<?php the_permalink(); ?>">
-					<div class="folio-item" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');">
-						<div class="folio-item-overlay">
+	<section id="home-latest">
+		<div class="no-gutter clearfix">
+		<?php $the_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC') ); ?>
+		<?php $count = 0; ?>
+			<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sr">
+					<div class="panel panel-default block-<?php echo $count++; ?> eq-height">
+						<div class="panel-body">
 							<h4><?php the_title(); ?></h4>
-							<p>
-								<?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
-							</p>
+							<p><?php echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?><?php //the_excerpt(); ?></p>
+							<a class="btn btn-primary" href="<?php the_permalink(); ?>">Read more</a>
 						</div>
 					</div>
-				</a>
-			</div>
-		<?php endforeach; ?>
-		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-	<?php endif; ?>
-</div>
-<h3>Latest News</h3>
-<section id="home-latest">
-	<div class="no-gutter clearfix">
-	<?php $the_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC') ); ?>
-	<?php $count = 0; ?>
-		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 sr">
-				<div class="panel panel-default block-<?php echo $count++; ?> eq-height">
-					<div class="panel-body">
-						<h4><?php the_title(); ?></h4>
-						<p><?php echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?><?php //the_excerpt(); ?></p>
-						<a class="btn btn-primary" href="<?php the_permalink(); ?>">Read more</a>
-					</div>
 				</div>
-			</div>
-		<?php ++$count; endwhile; ?>
+			<?php ++$count; endwhile; ?>
+		</div>
+	</section>
+	<div class="lg-pad-y text-center">
+		<a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start your project <i class="fa fa-arrow-right"></i></a>
 	</div>
-</section>
+</main>
 
 <?php
 get_footer();
