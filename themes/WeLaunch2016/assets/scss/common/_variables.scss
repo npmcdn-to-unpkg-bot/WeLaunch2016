@@ -1,0 +1,61 @@
+$font-primary: 'CynthoSlabPro-Regular', serif;
+$font-display: 'CynthoSlabPro-SemiBold', serif;
+$font-nexa: 'Nexa Bold', sans-serif;
+
+$primary: #ffdb12;
+$secondary: #221859;
+$highlight: #ffdb12;
+
+$welaunch-blue:#23273a;
+$welaunch-yellow: #ffdb12;
+
+$black: #1d1d1b;
+$grey: #e7e7e7;
+$dark-grey: #ADACAC;
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 16) + px;
+  font-size: $sizeValue + rem;
+}
+
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin bp($point) {
+   @if $point == xl {
+     @media (min-width: 75em) { @content ; }
+  }
+    @else if $point == lg {
+      @media (min-width: 62em) { @content ; }
+   }
+   @else if $point == md {
+     @media (min-width: 48em) { @content ; }
+  }
+    @else if $point == sm {
+     @media (min-width: 34em) { @content ; }
+  }
+  @else if $point == xs {
+     @media (max-width:33.8em)  { @content ; }
+
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}

@@ -1,0 +1,125 @@
+.navbar {
+  width:100%;
+  padding-top: em(10);
+  padding-bottom: em(10);
+  background-color: white;
+}
+.navbar-brand {
+  display:inline-block;
+  float:left;
+  margin-top:10px;
+
+  @include bp(md) {
+    margin-top:15px;
+  }
+}
+.navbar-brand img {
+  max-width:150px;
+}
+.menu-main-menu-container {
+  @include clearfix;
+  display:inline-block;
+  float:right;
+  text-align: center;
+
+  @include bp(md) {
+    text-align: left;
+  }
+}
+.navbar-right {
+  float:none;
+  list-style-type: none;
+  @include bp(md) {
+    float:right;
+  }
+}
+.navbar-right li {
+  display:block;
+  padding-left: em(10);
+  padding-right: em(10);
+  padding-top: em(15);
+  padding-bottom: em(15);
+
+  @include bp(md) {
+    display:inline-block;
+  }
+}
+.navbar-right li a {
+  text-transform: uppercase;
+  font-weight:700;
+  font-size: em(14);
+  border-bottom:1px solid transparent;
+  transition: all .3s ease;
+
+  &:hover {
+    border-color:$black;
+    text-decoration: none;
+    color:$black;
+    transition: all .3s ease;
+  }
+}
+
+a.menu-link {
+  float: right;
+  display: block;
+  padding: em(15) 0;
+  position: relative;
+}
+a.menu-link .fa {
+  color:$black;
+  font-size:1.2rem;
+}
+.menu-main-menu-container {
+  margin-top:7px;
+  overflow: hidden;
+  max-height: 0;
+  transition: all .3s ease;
+}
+.menu-main-menu-container.active {
+  max-height: 20em;
+  width:100%;
+  transition: all .3s ease;
+}
+.menu-main-menu-container ul {
+  margin: 0;
+  padding: 0;
+}
+.menu-main-menu-container li a {
+  display: block;
+  padding: 0.8em;
+}
+
+@include bp(md) {
+  a.menu-link {
+    display: none;
+  }
+  .menu-main-menu-container {
+    max-height: none;
+  }
+  .menu-main-menu-container ul {
+    margin: 0 0 0 -0.25em;
+    border: 0;
+  }
+
+  .menu-main-menu-container li {
+    display: inline-block;
+    margin: 0 0.25em;
+  }
+  .menu-main-menu-container li a {
+    display: block;
+    padding: 0;
+  }
+}
+
+// Menu Active Tabs
+.home .menu-main-menu-container li a,
+.single-casestudy .menu-main-menu-container li a {
+  color:$black;
+}
+.menu-main-menu-container li.active a {
+  border-color:$black;
+  color:$black;
+}
+.menu-main-menu-container li a {
+  color:lighten($black,50%);
+}

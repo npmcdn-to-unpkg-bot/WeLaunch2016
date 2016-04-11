@@ -14,37 +14,25 @@
 
 get_header(); ?>
 
-<div class="hero-lg" id="" style="background-image: url('http://localhost/WeLaunch/wp-content/uploads/2016/01/about-us.jpg');">
-	<div class="hero-lg__overlay">
-		<em><?php the_title(); ?></em>
+<div class="lg-hero" id="" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/01/about-us.jpg');">
+	<div class="lg-hero__overlay">
 		<h1>We Work With People, Brands and Organisations That Inspire Us</h1>
 	</div>
 </div>
 
 <main id="about-us" class="container">
 	<section class="clearfix sr">
-		<div class="no-gutter">
-			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-				<div class="pad">
-					<h3>About Us</h3>
-					<div class="about-us-content">
-						<?php the_field('about_us'); ?>
-					</div>
-				</div>
+			<div class="about-us__content">
+				<h3>About Us</h3>
+				<?php the_field('about_us'); ?>
 			</div>
-			<!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<img src="<?php //the_field('about_us_img'); ?>" class="img-responsive pull-right" id="feature-two-up">
-			</div> -->
 		</div>
 	</section>
 	<section class="clearfix sr" id="about-us-team">
 		<div class="no-gutter">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<aside style="background-image:url('<?php the_field('team_img'); ?>');" class="img-block eq-height"></aside>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<div class="content-block eq-height">
-					<div class="pad">
+			<aside style="background-image:url('<?php the_field('team_img'); ?>');" class="img-block eq-height"></aside>
+				<div class="about-us-team__block eq-height">
+					<div class="about-us-team__content">
 						<h3>Our Team</h3>
 						<?php the_field('team_copy'); ?>
 					</div>
@@ -60,13 +48,13 @@ get_header(); ?>
 				<h2>Who we've worked with</h2>
 			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+			<div class="row">
 				<?php
 				$posts = get_field('clients');
 				if( $posts ): ?>
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
-				        <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+				        <div class="client-logo__wrap">
 							<a href="<?php the_permalink(); ?>">
 								<?php //the_post_thumbnail('full', array( 'class'	=> 'img-responsive')); ?>
 								<img src="<?php the_field('logo'); ?>" class="img-responsive client-logo">

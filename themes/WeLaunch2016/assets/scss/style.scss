@@ -1,0 +1,36 @@
+/*
+Theme Name:         We Launch 2016 WordPress Theme
+Theme URI:          http://www.welaunch.co.uk
+Description:        WordPress theme for We Launch
+Version:            1
+Author:             We Launch (Rob Hough)
+Author URI:         http://www.welaunch.co.uk
+Text Domain:        welaunch
+
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/
+
+@import "../vendor/bourbon/bourbon";
+@import "../vendor/neat/neat";
+
+@import "common/variables";
+@import "common/normalize";
+@import "common/global";
+
+@import "components/typography";
+@import "components/patterns";
+@import "components/forms";
+@import "components/wp-classes";
+@import "components/bootstrap-carousel";
+
+@import "layouts/header";
+@import "layouts/sidebar";
+@import "layouts/footer";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/tinymce";
+
+div#mfPreviewBarShow {
+  display:none !important;
+}

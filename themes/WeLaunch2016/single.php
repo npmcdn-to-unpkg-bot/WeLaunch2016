@@ -9,9 +9,9 @@
 
 get_header(); ?>
 <?php if( get_field('blog_hero') ) { ?>
-	<div class="hero-lg" id="blog-hero" style="background-image: url('<?php the_field('blog_hero'); ?>');">
+	<div class="lg-hero" id="blog-hero" style="background-image: url('<?php the_field('blog_hero'); ?>');">
 <?php } else { ?>
-	<div class="hero-lg" id="blog-hero" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/03/WeLaunch_Background_news.png');">
+	<div class="lg-hero" id="blog-hero" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/03/WeLaunch_Background_news.png');">
 <?php } ?>
 </div>
 <main class="container">

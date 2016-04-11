@@ -1,0 +1,110 @@
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: -webkit-border-box;
+
+}
+body {
+	font-family: $font-primary;
+	font-weight: normal;
+	line-height: 1.5;
+  font-size:.9em;
+	color: $black;
+	background-color: #F8F8F8;
+  text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+  @include bp(md){
+    text-align: left;
+    font-size:1em;
+  }
+}
+a {
+  color:$black;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Utils
+.container {
+  @include outer-container(100%);
+  padding-right:1rem;
+  padding-left:1rem;
+
+  @include bp(md) {
+    @include outer-container(75em);
+  }
+}
+.row {
+  @include row();
+}
+.lg-pad {
+  padding: em(60);
+}
+.pad {
+  padding: em(30);
+}
+.lg-pad-y {
+  padding-top: em(60);
+  padding-bottom: em(60);
+}
+.pad-y {
+  padding-top: em(30);
+  padding-bottom: em(30);
+}
+.lg-pad-x {
+  padding-left: em(60);
+  padding-right: em(60);
+}
+.pad-x {
+  padding-left: em(30);
+  padding-right: em(30);
+}
+.text-center {
+  text-align:center;
+}
+section {
+	background-color:white;
+	// margin-bottom:10px;
+}
+section.grey {
+	background-color: #FAFAFA;
+}
+.section-title {
+  outline:0;
+  font-family:$font-nexa;
+  background-color:transparent;
+  border-bottom:1px solid $dark-grey;
+  text-transform: uppercase;
+  padding:.5em 1em;
+  color:$dark-grey;
+  font-size:em(14);
+  display:inline-block;
+}
+.img-block{
+  width:100%;
+  background-size: cover;
+  background-position: center center;
+}
+.crop-in {
+  max-width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+
+  @include bp(md) {
+    max-width: 90%;
+  }
+}

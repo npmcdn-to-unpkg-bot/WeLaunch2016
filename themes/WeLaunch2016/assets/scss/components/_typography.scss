@@ -1,0 +1,42 @@
+// Typography
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+@font-face {font-family: 'CynthoSlabPro-Italic';src: url('webfonts/308823_0_0.eot');src: url('webfonts/308823_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/308823_0_0.woff2') format('woff2'),url('webfonts/308823_0_0.woff') format('woff'),url('webfonts/308823_0_0.ttf') format('truetype');}
+@font-face {font-family: 'CynthoSlabPro-Regular';src: url('webfonts/308823_1_0.eot');src: url('webfonts/308823_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/308823_1_0.woff2') format('woff2'),url('webfonts/308823_1_0.woff') format('woff'),url('webfonts/308823_1_0.ttf') format('truetype');}
+@font-face {font-family: 'CynthoSlabPro-Italic';src: url('webfonts/3051D0_0_0.eot');src: url('webfonts/3051D0_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3051D0_0_0.woff2') format('woff2'),url('webfonts/3051D0_0_0.woff') format('woff'),url('webfonts/3051D0_0_0.ttf') format('truetype');}
+@font-face {font-family: 'CynthoSlabPro-Regular';src: url('webfonts/3051D0_1_0.eot');src: url('webfonts/3051D0_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3051D0_1_0.woff2') format('woff2'),url('webfonts/3051D0_1_0.woff') format('woff'),url('webfonts/3051D0_1_0.ttf') format('truetype');}
+@font-face {font-family: 'CynthoSlabPro-SemiBold';src: url('webfonts/3051D0_2_0.eot');src: url('webfonts/3051D0_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3051D0_2_0.woff2') format('woff2'),url('webfonts/3051D0_2_0.woff') format('woff'),url('webfonts/3051D0_2_0.ttf') format('truetype');}
+
+
+h1 {
+  font-size:em(39);
+}
+h2 {
+  font-size:em(31);
+}
+h3 {
+  font-size:em(25);
+}
+h4 {
+  font-size:em(20);
+}
+p {
+  font-size:1em;
+  margin:0;
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+}
+
+h1,h2,h3,h4 {
+	font-family:'Nexa Bold';
+  font-weight:500;
+  margin-top:0.55em;
+  margin-bottom:0.55em;
+  line-height: 1.1;
+}
+
+h1.lg-heading {
+	font-size:rem(61);
+	margin-top:0.75em;
+  margin-bottom:0.55em;
+}
