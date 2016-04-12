@@ -666,16 +666,16 @@ h1.lg-heading {
   outline: 0; }
   .folio-item:last-child {
     margin-right: 0; }
-  .folio-item:nth-child(3n) {
-    margin-right: 0; }
-  .folio-item:nth-child(3n+1) {
-    clear: left; }
   @media (min-width: 48em) {
     .folio-item {
       float: left;
       display: block;
       margin-right: 1.14595%;
       width: 32.56936%; }
+      .folio-item:nth-child(3n) {
+        margin-right: 0; }
+      .folio-item:nth-child(3n+1) {
+        clear: left; }
       .folio-item:last-child {
         margin-right: 0; } }
 
@@ -715,23 +715,23 @@ h1.lg-heading {
   transition: all 0.3s ease; }
 
 .folio-item-overlay h4 {
-  opacity: 1; }
+  opacity: 1;
+  margin-left: auto;
+  margin-right: auto; }
   @media (min-width: 48em) {
     .folio-item-overlay h4 {
-      /* transform: translate(-50px, 0);*/
-      /* -webkit-transform: translate(-50px, 0);*/
+      margin-left: 0;
+      margin-right: 0;
       transition: all 0.3s ease; } }
 
 .folio-item-overlay p {
   opacity: 1;
   max-height: 100%;
-  max-width: 100%;
-  overflow: visible; }
+  font-size: 0.875em; }
   @media (min-width: 48em) {
     .folio-item-overlay p {
       opacity: 0;
       max-height: 0;
-      overflow: hidden;
       transition: all 0.3s ease; } }
 
 .folio-item-overlay:hover p {
@@ -1112,13 +1112,17 @@ a.menu-link .fa {
 
 .menu-main-menu-container {
   margin-top: 7px;
+  width: 100%;
   overflow: hidden;
   max-height: 0;
   transition: all .3s ease; }
+  @media (min-width: 48em) {
+    .menu-main-menu-container {
+      width: auto;
+      max-height: none; } }
 
 .menu-main-menu-container.active {
   max-height: 20em;
-  width: 100%;
   transition: all .3s ease; }
 
 .menu-main-menu-container ul {
@@ -1256,9 +1260,9 @@ footer span {
 
 .page-work .work-filter {
   width: 100%;
-  padding: 0 3rem;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  padding: 0 1.875em;
+  margin-bottom: 0.9375em;
+  margin-top: 0.9375em;
   position: relative;
   height: auto;
   overflow-y: visible;
@@ -1322,7 +1326,7 @@ footer span {
   border-left: 0; }
 
 .page-work #work-grid {
-  padding: 3rem; }
+  padding: 1.875em; }
 
 .work-filer__discipline {
   float: left;
@@ -1366,6 +1370,20 @@ footer span {
   max-height: none;
   transition: all .3s ease; }
 
+.filter-grid .folio-item {
+  float: left;
+  display: block;
+  margin-right: 1.14595%;
+  width: 100%;
+  margin-bottom: 0.5em; }
+  .filter-grid .folio-item:last-child {
+    margin-right: 0; }
+  @media (min-width: 48em) {
+    .filter-grid .folio-item {
+      margin-right: 0;
+      margin-left: 4px;
+      width: calc(33.33333333333333333333333333333333% - 8px); } }
+
 .page-about-us .lg-hero__overlay {
   text-align: center;
   -webkit-align-items: center;
@@ -1394,6 +1412,12 @@ footer span {
   #about-us-team aside {
     width: 50%;
     float: left; } }
+
+#about-us-team aside .carousel,
+#about-us-team aside .img-block,
+#about-us-team aside .carousel-inner,
+#about-us-team aside .carousel-inner .item {
+  height: 100%; }
 
 .about-us-team__block {
   float: left;

@@ -116,9 +116,10 @@
 	margin-bottom:10px;
 	background-size:cover;
   outline:0;
-  @include omega(3n);
+
 
   @include bp(md) {
+    @include omega(3n);
     @include span-columns(4);
   }
 }
@@ -150,23 +151,23 @@
 }
 .folio-item-overlay h4 {
 	opacity:1;
+  margin-left:auto;
+  margin-right:auto;
 
 	@include bp(md){
-		/* transform: translate(-50px, 0);*/
-		/* -webkit-transform: translate(-50px, 0);*/
+    margin-left:0;
+    margin-right:0;
 		@include transition(all .3s ease);
 	}
 }
 .folio-item-overlay p {
   opacity:1;
   max-height:100%;
-  max-width: 100%;
-  overflow:visible;
+  font-size:em(14);
 
 	@include bp(md){
     opacity:0;
     max-height:0;
-    overflow:hidden;
 		@include transition(all .3s ease);
 	}
 }

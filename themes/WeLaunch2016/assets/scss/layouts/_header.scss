@@ -71,13 +71,18 @@ a.menu-link .fa {
 }
 .menu-main-menu-container {
   margin-top:7px;
+  width:100%;
   overflow: hidden;
   max-height: 0;
   transition: all .3s ease;
+
+  @include bp(md) {
+    width:auto;
+    max-height:none;
+  }
 }
 .menu-main-menu-container.active {
   max-height: 20em;
-  width:100%;
   transition: all .3s ease;
 }
 .menu-main-menu-container ul {

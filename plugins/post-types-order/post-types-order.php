@@ -5,7 +5,9 @@ Plugin URI: http://www.nsp-code.com
 Description: Posts Order and Post Types Objects Order using a Drag and Drop Sortable javascript capability
 Author: Nsp Code
 Author URI: http://www.nsp-code.com 
-Version: 1.7.9
+Version: 1.8.6
+Text Domain: post-types-order
+Domain Path: /languages/
 */
 
     define('CPTPATH',   plugin_dir_path(__FILE__));
@@ -40,12 +42,20 @@ Version: 1.7.9
                 { return $query; }  // Stop running the function if this is a virtual page
             //--
                
-            $options          =     cpt_get_options();
+            //no need if it's admin interface
             if (is_admin())
-                {
-                    //no need if it's admin interface
-                    return false;   
-                }
+                return $query;
+            
+            //check for ignore_custom_sort
+            if (isset($query->query_vars['ignore_custom_sort']) && $query->query_vars['ignore_custom_sort'] === TRUE)
+                return $query; 
+            
+            //ignore if  "nav_menu_item"
+            if(isset($query->query_vars)    &&  isset($query->query_vars['post_type'])   && $query->query_vars['post_type'] ==  "nav_menu_item")
+                return $query;    
+                
+            $options          =     cpt_get_options();
+            
             //if auto sort    
             if ($options['autosort'] == "1")
                 {
@@ -69,6 +79,10 @@ Version: 1.7.9
             
             $options          =     cpt_get_options();
             
+            //check for ignore_custom_sort
+            if (isset($query->query_vars['ignore_custom_sort']) && $query->query_vars['ignore_custom_sort'] === TRUE)
+                return $orderBy;  
+            
             //ignore the bbpress
             if (isset($query->query_vars['post_type']) && ((is_array($query->query_vars['post_type']) && in_array("reply", $query->query_vars['post_type'])) || ($query->query_vars['post_type'] == "reply")))
                 return $orderBy;
@@ -82,11 +96,19 @@ Version: 1.7.9
             if (is_admin())
                     {
                         
-                        if ($options['adminsort'] == "1" && 
+                        if ($options['adminsort'] == "1" || 
                             //ignore when ajax Gallery Edit default functionality 
-                            !($options['adminsort'] == "1" && defined('DOING_AJAX') && isset($_REQUEST['action']) && $_REQUEST['action'] == 'query-attachments')
+                            (defined('DOING_AJAX') && isset($_REQUEST['action']) && $_REQUEST['action'] == 'query-attachments')
                             )
                             {
+                                
+                                global $post;
+                                
+                                //temporary ignore ACF group and admin ajax calls, should be fixed within ACF plugin sometime later
+                                if (is_object($post) && $post->post_type    ==  "acf-field-group"
+                                        ||  (defined('DOING_AJAX') && isset($_REQUEST['action']) && strpos($_REQUEST['action'], 'acf/') === 0))
+                                    return $orderBy;
+                                    
                                 $orderBy = "{$wpdb->posts}.menu_order, {$wpdb->posts}.post_date DESC";
                             }
                     }
@@ -118,7 +140,7 @@ Version: 1.7.9
                 return;
             ?>
                 <div class="error fade">
-                    <p><strong><?php _e('Post Types Order must be configured. Please go to', 'cpt') ?> <a href="<?php echo get_admin_url() ?>options-general.php?page=cpto-options"><?php _e('Settings Page', 'cpt') ?></a> <?php _e('make the configuration and save', 'cpt') ?></strong></p>
+                    <p><strong><?php _e('Post Types Order must be configured. Please go to', 'post-types-order') ?> <a href="<?php echo get_admin_url() ?>options-general.php?page=cpto-options"><?php _e('Settings Page', 'post-types-order') ?></a> <?php _e('make the configuration and save', 'post-types-order') ?></strong></p>
                 </div>
             <?php
         }
@@ -127,7 +149,7 @@ Version: 1.7.9
     add_action( 'plugins_loaded', 'cpto_load_textdomain'); 
     function cpto_load_textdomain() 
         {
-            load_plugin_textdomain('cpt', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang');
+            load_plugin_textdomain('post-types-order', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages');
         }
       
     add_action('admin_menu', 'cpto_plugin_menu'); 
@@ -193,11 +215,13 @@ Version: 1.7.9
             if ( empty( $post ) )
                 return $where;
             
-            $_join = '';
-            $_where = '';
-
             //?? WordPress does not pass through this varialbe, so we presume it's category..
             $taxonomy = 'category';
+            if(preg_match('/ tt.taxonomy = \'([^\']+)\'/i',$where, $match)) 
+                $taxonomy   =   $match[1];
+            
+            $_join = '';
+            $_where = '';
             
             if ( $in_same_term || ! empty( $excluded_terms ) ) 
                 {
@@ -271,12 +295,13 @@ Version: 1.7.9
             if ( empty( $post ) )
                 return $where;
             
+            $taxonomy = 'category';
+            if(preg_match('/ tt.taxonomy = \'([^\']+)\'/i',$where, $match)) 
+                $taxonomy   =   $match[1];
+            
             $_join = '';
             $_where = '';
-
-            //?? WordPress does not pass through this varialbe, so we presume it's category..
-            $taxonomy = 'category';
-            
+                        
             if ( $in_same_term || ! empty( $excluded_terms ) ) 
                 {
                     $_join = " INNER JOIN $wpdb->term_relationships AS tr ON p.ID = tr.object_id INNER JOIN $wpdb->term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id";

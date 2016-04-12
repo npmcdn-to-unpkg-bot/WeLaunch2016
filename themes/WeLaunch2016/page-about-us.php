@@ -30,7 +30,34 @@ get_header(); ?>
 	</section>
 	<section class="clearfix sr" id="about-us-team">
 		<div class="no-gutter">
-			<aside style="background-image:url('<?php the_field('team_img'); ?>');" class="img-block eq-height"></aside>
+			<!-- <aside style="background-image:url('<?php //the_field('team_img'); ?>');" class="img-block eq-height"></aside> -->
+			<aside class="aside-img__carousel eq-height">
+				<?php if( get_field('team_carousel') ): ?>
+					<div id="team-carousel" class="carousel slide" data-ride="carousel">
+				    <!-- Indicators -->
+				    <ol class="carousel-indicators">
+						<?php
+						$ii=0;
+						while( have_rows('team_carousel') ): the_row();
+							if ($ii == 0) {
+								echo '<li data-target="#team-carousel" data-slide-to="0" class="active animated fadeIn"></li>';
+							} else {
+								echo '<li data-target="#team-carousel" data-slide-to="'.$ii.'" class="animated fadeIn"></li>';
+							}
+						$ii++;
+						endwhile; ?>
+				    </ol>
+				    <div class="carousel-inner" role="listbox">
+							<?php $i = 0; ?>
+							<?php while(has_sub_field('team_carousel')): ?>
+							<div class="item <?php if($i === 0) { ?> active <?php } ?>">
+								<div class="img-block" style="background-image:url('<?php the_sub_field('team_image'); ?>');"></div>
+							</div>
+							<?php ++$i; endwhile; ?>
+						</div>
+					</div>
+					<?php endif; ?>
+				</aside>
 				<div class="about-us-team__block eq-height">
 					<div class="about-us-team__content">
 						<h3>Our Team</h3>

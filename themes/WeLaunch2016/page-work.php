@@ -53,7 +53,7 @@ get_header(); ?>
 
 	<!-- Portfolio Blocks -->
 	<section id="work-grid">
-	<div id="portfolio" class="row">
+	<div id="portfolio" class="row filter-grid">
 		<?php $the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php query_posts($query_string . '&cat=-163'); ?>
 		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>

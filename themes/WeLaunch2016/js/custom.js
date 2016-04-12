@@ -57,7 +57,10 @@ $(window).resize(function(){
 
 // init Isotope
 var $grid = $('.filter-grid').isotope({
-  // options
+  layoutMode: 'fitRows',
+	fitRows: {
+	  gutter: 4
+	}
 });
 // filter items on button click
 $('.filter-btn').on( 'click', function() {

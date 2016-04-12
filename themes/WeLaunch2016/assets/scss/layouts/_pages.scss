@@ -30,9 +30,9 @@
 // Our Work
 .page-work .work-filter {
   width:100%;
-  padding:0 3rem;
-  margin-bottom:10px;
-  margin-top:10px;
+  padding:0 em(30);
+  margin-bottom:em(15);
+  margin-top:em(15);
   position:relative;
   height:auto;
   overflow-y:visible;
@@ -103,7 +103,7 @@
 }
 
 .page-work #work-grid {
-  padding:3rem;
+  padding:em(30);
 }
 
 .work-filer__discipline {
@@ -130,7 +130,16 @@
   max-height:none;
   transition:all .3s ease;
 }
+.filter-grid .folio-item {
+  @include span-columns(12);
+  margin-bottom:0.5em;
 
+  @include bp(md) {
+    margin-right:0;
+    margin-left:4px;
+    width: calc(33.33333333333333333333333333333333% - 8px);
+  }
+}
 // About Us
 .page-about-us .lg-hero__overlay {
   text-align:center;
@@ -144,14 +153,18 @@
     @include span-columns(8);
   }
 }
-#about-us-team {
-
-}
 #about-us-team aside {
+
   @include bp(md){
     width:50%;
     float:left;
   }
+}
+#about-us-team aside .carousel,
+#about-us-team aside .img-block,
+#about-us-team aside .carousel-inner,
+#about-us-team aside .carousel-inner .item {
+  height:100%;
 }
 .about-us-team__block {
   @include span-columns(12);
