@@ -1,0 +1,98 @@
+#sidebar-wrap {
+  @include span-columns(12);
+  position: relative;
+  margin-top:1.875em;
+
+  @include bp(md) {
+    @include span-columns(3);
+  }
+}
+#sidebar-wrap .tumblr-wrap {
+  background-color: white;
+  padding: 1.875em;
+}
+#sidebar-wrap .widget-title {
+  margin-top:0;
+}
+#sidebar-wrap .widget-title a {
+  color:#ADACAC;
+}
+#sidebar-wrap .rss-widget-icon {
+  display:none;
+}
+#sidebar-wrap .widget_rss ul {
+  padding-left:0;
+}
+#sidebar-wrap .widget_rss ul li {
+  display:none;
+  margin:1.1em 0;
+  border-bottom: 1px solid $grey;
+  @include bp(md) {
+    display:inherit;
+  }
+}
+#sidebar-wrap .widget_rss ul li:first-of-type {
+  display:block;
+}
+#sidebar-wrap .widget_rss ul li .rsswidget {
+  font-size:em(16);
+  font-family:'Nexa Bold';
+  display:block;
+  margin-bottom:0.55em;
+  line-height: 1.1;
+}
+#sidebar-wrap .widget_rss ul li .rss-date {
+  margin:0.25em 0;
+  margin-bottom:0.5em;
+  display:block;
+  font-size:em(14);
+}
+#sidebar-wrap .widget_rss ul li .rssSummary {
+  display:none;
+}
+
+#sidebar-wrap .twitter-wrap {
+  background-color:$secondary;
+  padding: 1.875em;
+}
+#sidebar-wrap .twitter-wrap h2 {
+  color:white;
+}
+.twitter-wrap .atf-static-tweets .atf-inner-wrapper .atf-tweet-wrapper {
+  position: relative;
+  margin-bottom:3em;
+  display:none;
+
+  @include bp(md) {
+    display:block;
+  }
+}
+.twitter-wrap .atf-static-tweets .atf-inner-wrapper .atf-tweet-wrapper:first-child {
+  display:block;
+}
+.twitter-wrap .atf-tweet-wrapper::after {
+  content:"\f099";
+  font-family: FontAwesome;
+  color:white;
+  position: absolute;
+  bottom:-2em;
+  left:0;
+  right:0;
+  margin:auto;
+  text-align: center;
+  font-size:em(35);
+
+  @include bp(md) {
+    font-size:em(20);
+    bottom:-1.65em;
+  }
+}
+.twitter-wrap .atf-tweet-wrapper p,
+.twitter-wrap .atf-tweet-wrapper a,
+.twitter-wrap .atf-tweet-actions {
+  color:white;
+}
+.twitter-wrap .atf-user-card,
+.twitter-wrap time {
+  display:none;
+}

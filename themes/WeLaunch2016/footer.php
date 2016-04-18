@@ -25,5 +25,8 @@
 		   player.api('autoplay', 1);
 	   });
 </script>
+<script>
+  new WOW().init();
+</script>
 </body>
 </html>

@@ -1,18 +1,9 @@
 </main>
 <div id="footer-services" class="text-center">
 	<div class="container pad-y">
-		<img src="<?php echo content_url(); ?>/uploads/2016/02/logo-new.png" class="img-responsive">
-		<p class="lead crop-in">The only brand communications agency in the world, based on Fitzroy Square in Central London, that has launched brands in the UK, Europe, Australasia, South America, and the Middle East.</p>
-	</div>
-	<div class="row">
-		<ul class="home_services-list">
-			<li><a href="services/#branding">Branding</a></li>
-			<li><a href="services/#digital">Digital</a></li>
-			<li><a href="#">Motion</a></li>
-			<li><a href="#">Print</a></li>
-			<li><a href="#">Strategy</a></li>
-			<li><a href="#">Events</a></li>
-		</ul>
+		<img src="<?php echo content_url(); ?>/uploads/2016/03/we-launch-logox2-1.png" class="img-responsive">
+		<p class="lead crop-in">Formed in 2010 with a very simple philosophy – to work with people, brands and organisations that inspire us – We Launch is a different kind of creative agency for these very different times.</p>
+		<p class="footer-newsletter"><strong>Subscribe to our newsletter</strong></br> <input placeholder="Your Email Address" type="text"><a href="#" class="fa fa-arrow-right"></a></p>
 	</div>
 </div>
 	<footer>

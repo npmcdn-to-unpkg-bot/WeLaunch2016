@@ -15,60 +15,35 @@
 get_header(); ?>
 
 <div class="lg-hero" style="background-image: url('<?php the_field('hero_img'); ?>');'">
-	<div class="lg-hero__overlay">
-		<em><?php the_title(); ?></em>
+	<div class="lg-hero__overlay">		
 		<h1><?php the_field('hero_header'); ?></h1>
 	</div>
 </div>
 
 <main class="container">
-	<section class="clearfix sr pad" id="services-block">
-		<div class="clearfix">
-			<div class="row">
+	<section id="home-latest">
+		<div class="no-gutter clearfix">
+		<?php $the_query = new WP_Query( array('post_type' => 'service', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
+		<?php $count = 0; ?>
+			<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+				<a href="<?php the_permalink(); ?>" class="panel panel-services block-<?php echo $count++; ?> eq-height">
+					<div class="panel-body">
+						<h4><?php the_title(); ?></h4>
+						<p><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
+						<?php if( get_field('service_highlights') ): ?>
+						<ul class="service-features__list">
+							<?php while( have_rows('service_highlights') ): the_row(); ?>
+								<li><p class="lead"><strong><?php the_sub_field('feature'); ?></strong></p></li>
+							<?php endwhile; ?>
+						</ul>
+						<?php endif; ?>
 
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2014/08/hero-filler.jpg" class="img-responsive panel-services-img">
-					<h4>Branding</h4>
-					<p>We work with a multitude of businesses from start-up companies to large corporates ensuring that their visual communication is a reflection of their current and future business aspirations.</p>
-				</div>
-
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2016/03/welaunch_digital.jpg" class="img-responsive panel-services-img">
-					<h4>Digital</h4>
-					<p>We are a different kind of agency for different times. Products are being purchased increasingly through mobile devices year on year and e-commerce sites need to adapt to a vast array of platforms, search engines and devices. </p>
-				</div>
-
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2016/03/welaunch_print.jpg" class="img-responsive panel-services-img" >
-					<h4>Print</h4>
-					<p>We have worked across a diverse number of industries from international airlines and government organisations to entertainment and luxury travel brands, and a whole lot more over the years.</p>
-				</div>
-
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2014/08/hero-filler.jpg" class="img-responsive panel-services-img">
-					<h4>Motion</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. </p>
-				</div>
-
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2016/03/welaunch_strategy.jpg" class="img-responsive panel-services-img">
-					<h4>Strategy</h4>
-					<p>At We Launch, we create brands. We launch new ones, evolve existing ones and reinvigorate those that have lost their way.</p>
-				</div>
-
-				<div class="panel panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2014/08/hero-filler.jpg" class="img-responsive panel-services-img">
-					<h4>Destination</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. </p>
-				</div>
-
-				<div class="panel  panel-services eq-height">
-					<img src="<?php echo content_url(); ?>/uploads/2014/08/hero-filler.jpg" class="img-responsive panel-services-img">
-					<h4>Engagement</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. </p>
-				</div>
-
-			</div>
+					</div>
+				</a>
+			<?php ++$count; endwhile; ?>
+		</div>
+		<div class="lg-pad-y text-center">
+			<a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start your project <i class="fa fa-arrow-right"></i></a>
 		</div>
 	</section>
 </main>

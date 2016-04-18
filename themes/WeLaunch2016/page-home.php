@@ -62,20 +62,15 @@ get_header(); ?>
 		<?php if( $posts ): ?>
 		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 			<?php setup_postdata($post); ?>
-				<a class="folio-item" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>">
-					<div class="folio-item-overlay">
-						<h4><?php the_title(); ?></h4>
-						<p>
-							<?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
-						</p>
-					</div>
+				<a class="folio-item" href="<?php the_permalink(); ?>">
+					<div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
 				</a>
 			<?php endforeach; ?>
 			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 		<?php endif; ?>
 	</div>
 	<div class="lg-pad-y text-center">
-		<a href="#" class="btn btn-primary">See Our Case Studies</a>
+		<a href="<?php echo home_url(); ?>/work" class="btn btn-primary">See Our Full Portfolio</a>
 	</div>
 
 	<section id="home-latest">
@@ -83,13 +78,12 @@ get_header(); ?>
 		<?php $the_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC') ); ?>
 		<?php $count = 0; ?>
 			<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-				<div class="panel panel-latest block-<?php echo $count++; ?> eq-height">
+				<a href="<?php the_permalink(); ?>" class="panel panel-latest block-<?php echo $count++; ?> eq-height">
 					<div class="panel-body">
 						<h4><?php the_title(); ?></h4>
 						<p><?php echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?><?php //the_excerpt(); ?></p>
-						<a class="btn btn-primary" href="<?php the_permalink(); ?>">Read more</a>
 					</div>
-				</div>
+				</a>
 			<?php ++$count; endwhile; ?>
 		</div>
 	</section>

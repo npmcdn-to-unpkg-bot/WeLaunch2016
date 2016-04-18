@@ -9,6 +9,7 @@
   max-width:225px;
   margin:0 auto;
   margin-bottom:rem(30);
+  filter: invert(100%);
 }
 
 #footer-services p.lead {
@@ -54,7 +55,26 @@
     @include transition(all .3s);
   }
 }
-
+#footer-services .footer-newsletter {
+  margin-top:1.5em;
+  display: inline-block;
+}
+#footer-services .footer-newsletter p,
+#footer-services .footer-newsletter .fa {
+  color:white;
+}
+#footer-services .footer-newsletter .fa:hover {
+  text-decoration: none;
+}
+#footer-services .footer-newsletter input {
+  border:0;
+  border-bottom:1px solid white;
+  background-color:transparent;
+  color:white;
+  outline:0;
+  padding:em(5);
+  margin-left:em(5);
+}
 
 footer {
   margin-top:0;

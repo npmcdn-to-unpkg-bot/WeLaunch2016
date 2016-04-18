@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Twitter Feed\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Tue Mar 29 2016 22:55:02 GMT-0500 (CDT)\n"
+"PO-Revision-Date: Tue Mar 29 2016 23:12:30 GMT-0500 (CDT)\n"
+"Last-Translator: admin <yoavks@gmail.com>\n"
+"Language-Team: \n"
+"Language: Hebrew\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Loco-Target-Locale: he_IL"
+
+#. Name of the plugin
+msgid "Twitter Feed"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://products.askupasoftware.com/twitter-feed"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"A powerful Twitter integration system that allows you to display tweets "
+"using widgets and shortcodes."
+msgstr ""
+
+#. Author of the plugin
+msgid "Askupa Software"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.askupasoftware.com"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-framework/EnvironmentValidator.php:206
+#, php-format
+msgid ""
+"<strong>Amarkal Framework has detected an error:</strong><br/>The %s "
+"<strong>%s</strong> requires PHP %s or newer to run (currently installed "
+"version: %s). Please upgrade your PHP version."
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:52
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:53
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:54
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:55
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:57
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:58
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:59
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: ../vendor/askupa-software/amarkal-
+#: framework/Extensions/WordPress/Admin/PostType.php:60
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:4
+msgid "Tweet Time"
+msgstr "זמן ציוץ"
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:32
+msgid "<span>Show</span> Media"
+msgstr "הצג מדיה"
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:26
+msgid "Retweeted by"
+msgstr "צוייץ על ידי"
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:58 ..
+#: includes/Tweets/UI/Tweet/template.phtml:58
+msgid "reply"
+msgstr "השב"
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:61 ..
+#: includes/Tweets/UI/Tweet/template.phtml:61
+msgid "retweet"
+msgstr "צייץ מחדש"
+
+#: ../includes/Tweets/UI/Tweet/template.phtml:64 ..
+#: includes/Tweets/UI/Tweet/template.phtml:64
+msgid "favorite"
+msgstr "אהבתי"

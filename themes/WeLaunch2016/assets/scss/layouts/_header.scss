@@ -15,6 +15,12 @@
 }
 .navbar-brand img {
   max-width:150px;
+  opacity: 1;
+  transition: all .3s ease;
+}
+.navbar-brand:hover img {
+  opacity:0.8;
+  transition: all .3s ease;
 }
 .menu-main-menu-container {
   @include clearfix;
@@ -62,8 +68,12 @@
 a.menu-link {
   float: right;
   display: block;
-  padding: em(15) 0;
   position: relative;
+  margin-top: 1.2em;
+  margin-bottom: .5em;
+  font-family: 'Nexa Bold';
+  border-bottom: 1px solid $black;
+  color:$black;
 }
 a.menu-link .fa {
   color:$black;

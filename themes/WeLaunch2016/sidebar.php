@@ -11,7 +11,13 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
-
-<aside id="secondary" class="widget-area" role="complementary">
+<section class="tumblr-wrap">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+	<div class="text-center">
+		<a href="http://welaunch.tumblr.com" target="_blank" class="btn btn-primary">View Tumblr</a>
+	</div>
+</section>
+<div class="twitter-wrap">
+	<h2>Twitter</h2>
+	<?php echo do_shortcode('[statictweets skin="default" resource="usertimeline" user="welaunch" list="" query="" count="5" retweets="on" replies="on" show="username,screenname,avatar,time,actions,media"/] '); ?>
+</div>

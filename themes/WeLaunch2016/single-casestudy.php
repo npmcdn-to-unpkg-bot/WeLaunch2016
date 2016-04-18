@@ -57,19 +57,20 @@ get_header(); ?>
 				</div>
 			<?php endif; ?>
 
-			<div class="row">
+
 			<?php if( get_sub_field('2col_left') ): ?>
-				<div class="case-study__2up">
-					<img src="<?php the_sub_field('2col_left'); ?>" class="img-responsive">
+				<div class="row">
+					<div class="case-study__2up">
+						<img src="<?php the_sub_field('2col_left'); ?>" class="img-responsive">
+					</div>
+			<?php endif; ?>
+			<?php if( get_sub_field('2col_right') ): ?>
+					<div class="case-study__2up">
+						<img src="<?php the_sub_field('2col_right'); ?>" class="img-responsive">
+					</div>
 				</div>
 			<?php endif; ?>
 
-			<?php if( get_sub_field('2col_right') ): ?>
-				<div class="case-study__2up">
-					<img src="<?php the_sub_field('2col_right'); ?>" class="img-responsive">
-				</div>
-			<?php endif; ?>
-		</div>
 
 			<?php if( get_sub_field('text_box') ): ?>
 				<div class="row case-study__txtblock">
@@ -98,7 +99,7 @@ get_header(); ?>
 	                        'terms' => $term_ids,
 	                        'operator'=> 'IN' //Or 'AND' or 'NOT IN'
 	                     )),
-	      'posts_per_page' => 6,
+	      'posts_per_page' => 3,
 	      'ignore_sticky_posts' => 1,
 	      'orderby' => 'rand',
 	      'post__not_in'=>array($post->ID)
@@ -112,13 +113,8 @@ get_header(); ?>
 	   <?php if($second_query->have_posts()) {
 	     while ($second_query->have_posts() ) : $second_query->the_post(); ?>
 
-			 <a class="folio-item" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>">
-				 <div class="folio-item-overlay">
-					 <h4><?php the_title(); ?></h4>
-					 <p>
-						 <?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
-					 </p>
-				 </div>
+			 <a class="folio-item" href="<?php the_permalink(); ?>">
+				 <div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
 			 </a>
 
 	   <?php endwhile; wp_reset_query();

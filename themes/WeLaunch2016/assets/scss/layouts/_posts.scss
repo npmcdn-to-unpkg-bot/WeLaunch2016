@@ -1,4 +1,7 @@
 // Single Case Studies
+.single-service main {
+  margin-top:1em;
+}
 #case-study-info {
   background-color: white;
   padding:em(30);
@@ -94,6 +97,21 @@
   font-style:italic;
   @include font-size(1.4);
 }
+#single-service__features {
+  padding:em(30);
+  padding-top:em(60);
+}
+#single-service__features .single-service__3up {
+  @include span-columns(12);
+  text-align:center;
+
+  @include bp(md) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+
 
 // Blog Single
 #blog-hero {
@@ -103,7 +121,13 @@
   right:0;
   z-index:-1;
 }
+#blog-wrap {
+  @include span-columns(12);
 
+  @include bp(md) {
+    @include span-columns(9);
+  }
+}
 #blog-content {
   background-color: white;
   padding:rem(30) rem(60);

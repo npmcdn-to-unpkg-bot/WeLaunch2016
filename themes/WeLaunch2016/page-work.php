@@ -57,14 +57,9 @@ get_header(); ?>
 		<?php $the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php query_posts($query_string . '&cat=-163'); ?>
 		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-		<?php $terms = get_the_terms($post->ID, "industry_sectors"); ?>
-			<a class="folio-item filter-item <?php the_field('discipline'); ?> <?php foreach ( $terms as $term ) { echo $term->slug . ' '; } ?> <?php echo get_the_time('Y'); ?>" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>">
-				<div class="folio-item-overlay">
-					<h4><?php the_title(); ?></h4>
-					<p>
-						<?php echo wp_trim_words( get_field('short_description'), 20, '...' ); ?>
-					</p>
-				</div>
+		<?php $terms = get_the_terms($post->ID, "industry_sectors"); ?>	
+			<a class="folio-item filter-item <?php the_field('discipline'); ?> <?php foreach ( $terms as $term ) { echo $term->slug . ' '; } ?> <?php echo get_the_time('Y'); ?>"href="<?php the_permalink(); ?>">
+				<div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
 			</a>
 		<?php endwhile; ?>
 	</div>
