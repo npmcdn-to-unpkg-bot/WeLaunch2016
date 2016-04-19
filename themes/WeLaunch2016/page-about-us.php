@@ -51,7 +51,7 @@ get_header(); ?>
 							<?php $i = 0; ?>
 							<?php while(has_sub_field('team_carousel')): ?>
 							<div class="item <?php if($i === 0) { ?> active <?php } ?>">
-								<div class="img-block" style="background-image:url('<?php the_sub_field('team_image'); ?>');"></div>
+								<div class="img-block" alt="Our Team Members" style="background-image:url('<?php the_sub_field('team_image'); ?>');"></div>
 							</div>
 							<?php ++$i; endwhile; ?>
 						</div>
@@ -97,7 +97,7 @@ get_header(); ?>
 
 
 	<section class="clearfix pad" id="testimonials" style="background-image:url('<?php echo content_url(); ?>/uploads/2016/04/sayagata-400px.png');">
-		<div class="text-center"><h3>What They Say</h3></div>
+		<div class="text-center"><h2>What They Say</h2></div>
 		<?php $posts = get_field('testimonials');
 		if( $posts ): ?>
 		<div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
@@ -106,10 +106,11 @@ get_header(); ?>
 				<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 					<?php setup_postdata($post); ?>
 					<div class="item <?php if($i === 0) { ?> active <?php } ?>">
-						<article class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2" >
-							<img src="<?php the_field('image'); ?>" class="img-wrap img-responsive">
-							<blockquote><?php the_field('quote'); ?></blockquote>
-							<p class="testimonial-name"><strong><?php the_field('name'); ?></strong> - <?php the_field('position_company'); ?></p>
+						<article class="testimonial-item__wrap" >
+							<div class="testimonial-item__content">
+								<blockquote><?php the_field('quote'); ?></blockquote>
+								<p class="testimonial-name"><strong><?php the_field('name'); ?></strong> - <?php the_field('position_company'); ?></p>
+							</div>
 						</article>
 					</div>
 				<?php ++$i; endforeach; ?>

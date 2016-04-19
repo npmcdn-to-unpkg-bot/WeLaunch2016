@@ -1,7 +1,4 @@
 // Single Case Studies
-.single-service main {
-  margin-top:1em;
-}
 #case-study-info {
   background-color: white;
   padding:em(30);
@@ -15,6 +12,9 @@
 }
 .single-casestudy .lg-hero__overlay h1 {
   text-align: center;
+  @include bp(md) {
+    font-size:em(57.331);
+  }
 }
 .single-casestudy .lg-hero__overlay p {
   max-width:80%;
@@ -24,6 +24,7 @@
 
   @include bp(md){
     max-width:40%;
+    // font-size:em(20);
   }
 }
 .single-casestudy .lg-hero__overlay a.fa {
@@ -48,9 +49,15 @@
 #casestudy-content {
   background-color: white;
 }
+@include bp (md) {
+  .case-study__content p {
+    max-width: 80%;
+  }
+}
+
 
 .single-casestudy #casestudy-content img {
-  margin-bottom:10px;
+  margin-bottom:1em;
 }
 
 .single-casestudy .img-wrap img {
@@ -70,10 +77,21 @@
 }
 .case-study__txtblock {
   background-color: white;
-  padding:em(60);
+  padding:em(30);
   text-align:center;
 }
+.case-study__txtblock p {
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
 
+  @include bp(md) {
+    max-width: 80%;
+  }
+}
+.case-study__txtblock p:last-of-type {
+  margin-bottom:1em;
+}
 .single-casestudy .sectors span {
   background-color: #e7e7e7;
   padding:.5em 1em;

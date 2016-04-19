@@ -20,7 +20,6 @@ get_header(); ?>
 		<a class="fa fa-chevron-down" href="#case-study-info"></a>
 	</div>
 </div>
-
 <main id="case-study" class="container">
 	<section>
 		<div class="row" id="case-study-info">

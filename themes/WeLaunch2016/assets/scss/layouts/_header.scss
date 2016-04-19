@@ -92,7 +92,8 @@ a.menu-link .fa {
   }
 }
 .menu-main-menu-container.active {
-  max-height: 20em;
+  border-top:1px solid $grey;
+  max-height: 25em;
   transition: all .3s ease;
 }
 .menu-main-menu-container ul {
@@ -128,10 +129,11 @@ a.menu-link .fa {
 
 // Menu Active Tabs
 .home .menu-main-menu-container li a,
-.single-casestudy .menu-main-menu-container li a {
+.single .menu-main-menu-container li a {
   color:$black;
 }
-.menu-main-menu-container li.active a {
+.menu-main-menu-container li.active a,
+.page-work .menu-item-1401 a {
   border-color:$black;
   color:$black;
 }

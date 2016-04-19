@@ -21,36 +21,42 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<section class="clearfix sr">
-		<div class="no-gutter">
-			<div class="single-service__2up">
-				<img src="<?php echo content_url(); ?>/uploads/2016/04/wl_digital-1.jpg" >
-			</div>
-			<div class="single-service__2up">
-				<img src="<?php echo content_url(); ?>/uploads/2016/04/wl_digital-2.jpg">
-			</div>
-		</div>
-	</section>
+	<?php if( have_rows('service_content') ): ?>
+		<?php while( have_rows('service_content') ): the_row(); ?>
 
-	<section id="single-service__features">
-		<div class="row">
-			<article class="single-service__3up">
-				<img src="http://placehold.it/75x75" class="center-block">
-				<h4>Web Design & Development</h4>
-				<p>We focus on mobile-first and responsive web platforms, designed & built to the highest standard by our in-house team. We use the latest CMS and eCommerce platforms for a high-performance, hassle-free web experience.</p>
-			</article>
-			<article class="single-service__3up">
-				<img src="http://placehold.it/75x75" class="center-block">
-				<h4>Social & Email Marketing</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus, eros nec porta aliquet, augue arcu finibus odio, ut cursus augue felis quis magna. Maecenas a lobortis dolor. Nulla facilisi. </p>
-			</article>
-			<article class="single-service__3up">
-				<img src="http://placehold.it/75x75" class="center-block">
-				<h4>SEO & Analytics</h4>
-				<p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus, eros nec porta aliquet, augue arcu finibus odio, ut cursus augue felis quis magna. Maecenas a lobortis dolor. Nulla facilisi.</p>
-			</article>
-		</div><!-- end row -->
-	</section>
+
+			<?php if ( get_sub_field('left_image')): ?>
+				<section class="clearfix">
+					<div class="single-service__2up">
+						<img src="<?php the_sub_field('left_image'); ?>">
+					</div>
+			<?php endif; ?>
+			<?php if ( get_sub_field('right_image')): ?>
+					<div class="single-service__2up">
+						<img src="<?php the_sub_field('right_image'); ?>">
+					</div>
+				</section>
+			<?php endif; ?>
+
+			<?php if( have_rows('3_icons_up') ): ?>
+				<section id="single-service__features">
+						<div class="row">
+							<?php while( have_rows('3_icons_up') ): the_row(); ?>
+								<article class="single-service__3up">
+									<img src="<?php the_sub_field('icon'); ?>" class="center-block">
+									<?php the_sub_field('desciption'); ?>
+								</article>
+							<?php endwhile; ?>
+						</div>
+				</section>
+			<?php endif; ?>
+
+			<?php if ( get_sub_field('wysiwyg')): ?>
+				<?php the_sub_field('wysiwyg'); ?>
+			<?php endif; ?>
+
+		<?php endwhile; ?>
+	<?php endif; ?>
 
 	<section id="service-related">
 		<div class="text-center pad-y">

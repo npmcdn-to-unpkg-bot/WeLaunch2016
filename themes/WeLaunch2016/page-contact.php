@@ -52,7 +52,7 @@ get_header(); ?>
 	<section class="clearfix" id="contact-form">
 		<div class="lg-pad-y">
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 text-center">
+				<div class="contact-form__wrapper">
 					<h3 class="section-title">Start Your Project</h3>
 					<?php echo do_shortcode('[contact-form-7 id="2470" title="Contact"]'); ?>
 				</div>

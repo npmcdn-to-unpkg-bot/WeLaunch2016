@@ -2,7 +2,7 @@
 .home .lg-hero__overlay h1 {
   margin-top:0;
   @include bp(md) {
-    font-size:em(61);
+    font-size:em(57.331);
   }
 }
 #home-wrapper {
@@ -179,7 +179,7 @@
   @include span-columns(12);
 
   @include bp(md) {
-    @include span-columns(8);
+    @include span-columns(6);
   }
 }
 #about-us-team aside {
@@ -230,13 +230,34 @@
     transition:all .3s ease;
   }
 }
+#testimonial-carousel .testimonial-item__wrap {
+
+  @include bp(md) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+#testimonial-carousel .testimonial-item__wrap img {
+  border-radius: 50%;
+  width: 150px;
+  height:120px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#testimonial-carousel .testimonial-item__content {
+  text-align: center;
+}
+#testimonial-carousel .testimonial-item__content blockquote {
+  margin:0;
+  margin-top:1em;
+}
 
 // Contact
 .contact-main__block {
   @include span-columns(12);
 
   @include bp(md) {
-    @include span-columns(8);
+    @include span-columns(6);
   }
 }
 .contact-main__content {
@@ -275,6 +296,41 @@
     width:50%;
   }
 }
+.contact-map__wrapper iframe {
+  min-height: 350px;
+}
+.contact-form__wrapper {
+  @include span-columns(12);
+  text-align: center;
+
+  @include bp(md) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
+.contact-form__wrapper input,
+.contact-form__wrapper textarea {
+  max-width: calc(100% - 30px);
+}
+.contact-form__wrapper input,
+.contact-form__wrapper textarea {
+  border-radius:0;
+  padding:.5em;
+  border:1px solid $grey;
+  box-shadow: none;
+}
+.contact-form__wrapper .wpcf7 {
+  padding-top:em(30);
+}
+.contact-form__wrapper .wpcf7 input[type="submit"] {
+  background:transparent;
+  border-bottom:1px solid $black;
+  text-transform: uppercase;
+  border:0;
+}
+
+
+
 
 // Services
 .page-services .lg-hero__overlay {
@@ -339,10 +395,13 @@
 }
 .service-features__list li {
   display:block;
-  float:left;
-  width:50%;
-  padding-right:em(10);
   box-sizing: border-box;
+
+  @include bp(md) {
+    float:left;
+    width:50%;
+    padding-right:em(10);
+  }
 }
 .service-features__list li p {
   color:darken($grey, 20%);
@@ -357,6 +416,9 @@
 }
 
 // Services - Single
+.single-service main {
+  margin-top:1em;
+}
 .single-service .lg-hero__overlay {
   text-align: center;
   align-content: center;
