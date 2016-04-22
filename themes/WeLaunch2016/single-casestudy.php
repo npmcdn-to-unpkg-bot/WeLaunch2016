@@ -13,13 +13,21 @@
  */
 
 get_header(); ?>
-
-<div class="lg-hero" style="background-image: url('<?php the_field('hero_banner'); ?>');">
-	<div class="lg-hero__overlay">
-		<?php the_field('hero_copy'); ?>
-		<a class="fa fa-chevron-down" href="#case-study-info"></a>
+<?php if ( get_field('hero_banner') ): ?>
+	<div class="lg-hero" style="background-image: url('<?php the_field('hero_banner'); ?>');">
+		<div class="lg-hero__overlay">
+			<?php if ( get_field('hero_copy') ): ?>
+				<?php the_field('hero_copy'); ?>
+			<?php else: ?>
+				<h1><?php the_title() ?></h1>
+			<?php endif; ?>
+			<a class="fa fa-chevron-down" href="#case-study-info"></a>
+		</div>
 	</div>
-</div>
+<?php else: ?>
+<br>
+<?php endif; ?>
+
 <main id="case-study" class="container">
 	<section>
 		<div class="row" id="case-study-info">
@@ -79,7 +87,13 @@ get_header(); ?>
 
 
 			<?php endwhile; ?>
+
+			<?php else: ?>
+			<div class="img-container">
+				<?php the_field('images'); ?>
+			</div>
 		<?php endif; ?>
+
 	</section>
 
 	<?php //Get array of terms

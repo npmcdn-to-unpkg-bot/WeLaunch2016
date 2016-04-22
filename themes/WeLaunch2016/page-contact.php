@@ -13,19 +13,18 @@
  */
 
 get_header(); ?>
-<div class="lg-hero" style="background-image: url('<?php the_field('hero_img'); ?>');">
+<!-- <div class="lg-hero" style="background-image: url('<?php //the_field('hero_img'); ?>');">
 	<div class="lg-hero__overlay">
-		<h1><?php the_field('hero_header'); ?></h1>
+		<h1><?php //the_field('hero_header'); ?></h1>
 	</div>
-</div>
+</div> -->
 <main class="container">
 	<section class="clearfix" id="contact-main">
 		<div class="row">
 			<div class="contact-main__block">
 				<div class="contact-main__content">
 					<h3>Where We Are</h3>
-					<p>Based on Fitzroy Square in the heart of London’s Fitzrovia, we’re only a three minute walk from Warren Street and Great Portland Street tube stations. Goodge Street tube is less then five minutes away with Tottenham Court Road and Oxford Circus tubes a ten minute walk. Pop in for a chat to see how we can help your business – grab a bite to eat from the restaurants on Charlotte Street or a coffee from the eclectic cafes on Warren Street and visit our salubrious studio.</p>
-					<p><strong>By Tube</strong>: Warren Street, Goodge Street & Great Portland Street.</p>
+					<?php the_content(); ?>
 				</div>
 			</div>
 		</div>
@@ -35,11 +34,7 @@ get_header(); ?>
 		<div class="row">
 			<div class="contact-info__block eq-height">
 				<div class="contact-info__content">
-					<h3>Say Hello</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis, nibh ac auctor malesuada, elit enim eleifend nisi, bibendum condimentum ex urna id nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-					<p><strong>T:</strong> +44 (0)20 3714 0867</p>
-					<p><strong>E:</strong> <a href="mailto:enquiries@welaunch.co.uk">enquiries@welaunch.co.uk</a></p>
-					<p>Lower Ground Floor,</br> 5 Fitzroy Square,</br> London W1T 5HH</p>
+					<?php the_field('say_hello_copy'); ?>
 					<p><i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-instagram"></i></p>
 				</div>
 			</div>

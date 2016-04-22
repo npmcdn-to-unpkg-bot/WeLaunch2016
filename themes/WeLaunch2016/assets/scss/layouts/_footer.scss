@@ -74,6 +74,7 @@
   outline:0;
   padding:em(5);
   margin-left:em(5);
+  border-radius:0;
 }
 
 footer {
@@ -90,4 +91,11 @@ footer a {
 }
 footer span {
   font-size:rem(13);
+}
+.footer-social .fa {
+  padding-left:5px;
+  padding-right:5px;
+  font-size:em(20);
+  margin-top:0.67em;
+  color:white;
 }

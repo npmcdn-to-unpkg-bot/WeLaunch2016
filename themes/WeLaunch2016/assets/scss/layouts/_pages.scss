@@ -5,6 +5,9 @@
     font-size:em(57.331);
   }
 }
+.home .lg-hero__overlay p {
+  font-size:1.2em;
+}
 #home-wrapper {
   padding-top:em(16);
 }
@@ -132,7 +135,7 @@
 }
 
 .page-work #work-grid {
-  padding:em(30);
+  padding:1.5rem 1rem;  
 }
 
 .work-filer__discipline {
@@ -161,12 +164,12 @@
 }
 .filter-grid .folio-item {
   @include span-columns(12);
-  margin-bottom:0.5em;
+  margin-bottom:0.75rem;
 
   @include bp(md) {
     margin-right:0;
-    margin-left:4px;
-    width: calc(33.33333333333333333333333333333333% - 8px);
+    margin-left:0.5rem;
+    width: calc(33.33333333333333333333333333333333% - 1rem);
   }
 }
 // About Us
@@ -216,14 +219,17 @@
 
   @include bp(md) {
     @include omega-reset(2n);
-    @include span-columns(2);
-    @include omega(6n);
+    @include span-columns(3);
+    @include omega(4n);
   }
 }
 .client-logo__wrap img {
-  padding:4em 2em;
+  padding:2em;
   filter:grayscale(100%);
   transition:all .3s ease;
+  max-width:80%;
+  margin-left:auto;
+  margin-right:auto;
 
   &:hover {
     filter:grayscale(0);
@@ -253,6 +259,9 @@
 }
 
 // Contact
+#contact-main {
+  margin-top:1em;
+}
 .contact-main__block {
   @include span-columns(12);
 
@@ -392,19 +401,18 @@
   padding-left:0;
   margin-top:2em;
   display: block;
+  @include clearfix;
 }
-.service-features__list li {
-  display:block;
+.service-features__list li {  
   box-sizing: border-box;
-
-  @include bp(md) {
-    float:left;
-    width:50%;
-    padding-right:em(10);
-  }
+  background-color: #e7e7e7;
+  padding: .5em 1em;
+  display: inline-block;
+  margin: 2.5px;
+  transition: all 0.3s;
 }
 .service-features__list li p {
-  color:darken($grey, 20%);
+  color:$black;
   font-family:'Nexa Bold';
   font-size:em(14);
   text-transform: uppercase;
@@ -413,45 +421,6 @@
 .panel-services:hover .service-features__list li p {
   color:white;
   transition: all .3s ease;
-}
-
-// Services - Single
-.single-service main {
-  margin-top:1em;
-}
-.single-service .lg-hero__overlay {
-  text-align: center;
-  align-content: center;
-}
-.single-service__2up {
-  @include span-columns(12);
-
-  @include bp(md) {
-    @include span-columns(6);
-    @include omega();
-    width:50%;
-  }
-}
-.single-service__content {
-  padding:em(30);
-  box-sizing: border-box;
-}
-.single-service__2up:last-child {
-  padding:0;
-}
-.service-features {
-  text-align:center;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  background-color:$black;
-  padding:em(60);
-}
-.service-features article {
-  font-family:'Nexa Bold', sans-serif;
-  text-transform: uppercase;
-  color:white;
 }
 
 // Blog

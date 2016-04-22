@@ -14,9 +14,10 @@
 
 get_header(); ?>
 
-<div class="lg-hero" id="" style="background-image: url('<?php echo content_url(); ?>/uploads/2016/01/about-us.jpg');">
+<div class="lg-hero" id="" style="background-image: url('<?php the_field('hero_img', 183); ?>');">
 	<div class="lg-hero__overlay">
-		<h1>We Work With People, Brands and Organisations That Inspire Us</h1>
+		<!-- <h1>We work with people, brands and organisations that inspire us</h1> -->
+		<h1><?php the_field('hero_header', 183); ?></h1>
 	</div>
 </div>
 
@@ -82,10 +83,10 @@ get_header(); ?>
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 				        <?php setup_postdata($post); ?>
 				        <div class="client-logo__wrap">
-							<a href="<?php the_permalink(); ?>">
+							<article>
 								<?php //the_post_thumbnail('full', array( 'class'	=> 'img-responsive')); ?>
 								<img src="<?php the_field('logo'); ?>" class="img-responsive client-logo">
-							</a>
+							</article>
 						</div>
 				    <?php endforeach; ?>
 				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>

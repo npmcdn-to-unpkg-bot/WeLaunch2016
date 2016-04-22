@@ -12,51 +12,69 @@ get_header(); ?>
 <main class="container" id="single-service__digtal">
 	<section class="clearfix sr">
 		<div class="row">
-			<div class="single-service__2up eq-height">
+
+		<?php if( have_rows('service_content') ): ?>
+			<?php while( have_rows('service_content') ): the_row(); ?>
+				<?php if ( get_sub_field('left_image')): ?>
+					<section class="clearfix">
+						<div class="single-service__2up">
+							<img src="<?php the_sub_field('left_image'); ?>">
+						</div>
+				<?php endif; ?>
+				<?php if ( get_sub_field('right_image')): ?>
+						<div class="single-service__2up">
+							<img src="<?php the_sub_field('right_image'); ?>">
+						</div>
+					</section>
+				<?php endif; ?>
+			<?php endwhile; ?>
+		<?php endif; ?>
+
+		</div>
+	</section>
+	<section class="clearfix sr">
+		<div class="row">
+			<div class="single-service__2of3 eq-height">
 				<div class="single-service__content">
 					<h3><?php the_title(); ?></h3>
 					<?php the_content(); ?>
 				</div>
 			</div><!--end 2up-->
+			<div class="single-service__1of3 eq-height">
+				<?php if( have_rows('service_highlights') ): ?>
+					<div class="service-keyword__wrapper">
+					<h3>Disciplines</h3>
+					<?php while( have_rows('service_highlights') ): the_row(); ?>						
+							<article class="service-keyword__item"><?php the_sub_field('feature'); ?></article>						
+					<?php endwhile; ?>
+					</div>
+				<?php endif; ?>
+			</div>
 		</div>
 	</section>
 
-	<?php if( have_rows('service_content') ): ?>
-		<?php while( have_rows('service_content') ): the_row(); ?>
+	<!-- <?php //if( have_rows('service_content') ): ?>
+		<?php //while( have_rows('service_content') ): the_row(); ?>
 
-
-			<?php if ( get_sub_field('left_image')): ?>
-				<section class="clearfix">
-					<div class="single-service__2up">
-						<img src="<?php the_sub_field('left_image'); ?>">
-					</div>
-			<?php endif; ?>
-			<?php if ( get_sub_field('right_image')): ?>
-					<div class="single-service__2up">
-						<img src="<?php the_sub_field('right_image'); ?>">
-					</div>
-				</section>
-			<?php endif; ?>
-
-			<?php if( have_rows('3_icons_up') ): ?>
+			<?php //if( have_rows('3_icons_up') ): ?>
 				<section id="single-service__features">
 						<div class="row">
-							<?php while( have_rows('3_icons_up') ): the_row(); ?>
+							<?php //while( have_rows('3_icons_up') ): the_row(); ?>
 								<article class="single-service__3up">
-									<img src="<?php the_sub_field('icon'); ?>" class="center-block">
-									<?php the_sub_field('desciption'); ?>
+									<img src="<?php //the_sub_field('icon'); ?>" class="center-block">
+									<?php //the_sub_field('desciption'); ?>
 								</article>
-							<?php endwhile; ?>
+							<?php //endwhile; ?>
 						</div>
 				</section>
-			<?php endif; ?>
+			<?php //endif; ?>
 
-			<?php if ( get_sub_field('wysiwyg')): ?>
-				<?php the_sub_field('wysiwyg'); ?>
-			<?php endif; ?>
+			<?php //if ( get_sub_field('wysiwyg')): ?>
+				<?php //the_sub_field('wysiwyg'); ?>
+			<?php //endif; ?>
 
-		<?php endwhile; ?>
-	<?php endif; ?>
+		<?php //endwhile; ?>
+	<?php //endif; ?> -->
 
 	<section id="service-related">
 		<div class="text-center pad-y">

@@ -29,15 +29,8 @@ get_header(); ?>
 				<a href="<?php the_permalink(); ?>" class="panel panel-services block-<?php echo $count++; ?> eq-height">
 					<div class="panel-body">
 						<h4><?php the_title(); ?></h4>
-						<p><?php echo wp_trim_words( get_the_excerpt(), 25, '...' ); ?></p>
-						<?php if( get_field('service_highlights') ): ?>
-						<ul class="service-features__list">
-							<?php while( have_rows('service_highlights') ): the_row(); ?>
-								<li><p class="lead"><strong><?php the_sub_field('feature'); ?></strong></p></li>
-							<?php endwhile; ?>
-						</ul>
-						<?php endif; ?>
-
+						<!-- <p><?php //echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?></p> -->	
+						<p><?php the_excerpt(); ?></p>	
 					</div>
 				</a>
 			<?php ++$count; endwhile; ?>
