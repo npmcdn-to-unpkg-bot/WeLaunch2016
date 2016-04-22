@@ -135,7 +135,8 @@
 }
 
 .page-work #work-grid {
-  padding:1.5rem 1rem;  
+  padding:2rem 1rem;
+  padding-left:calc(1rem + 5px); 
 }
 
 .work-filer__discipline {
@@ -164,12 +165,12 @@
 }
 .filter-grid .folio-item {
   @include span-columns(12);
-  margin-bottom:0.75rem;
+  margin-bottom:15px;
 
   @include bp(md) {
     margin-right:0;
-    margin-left:0.5rem;
-    width: calc(33.33333333333333333333333333333333% - 1rem);
+    margin-left:15px;
+    width: calc(33.33333333333333333333333333333333% - 30px);
   }
 }
 // About Us
@@ -214,11 +215,9 @@
   border-box:box-sizing;
 }
 .client-logo__wrap {
-  @include span-columns(6);
-  @include omega(2n);
+  @include span-columns(12);  
 
-  @include bp(md) {
-    @include omega-reset(2n);
+  @include bp(md) {    
     @include span-columns(3);
     @include omega(4n);
   }
@@ -227,9 +226,14 @@
   padding:2em;
   filter:grayscale(100%);
   transition:all .3s ease;
-  max-width:80%;
+  max-width:60%;
   margin-left:auto;
   margin-right:auto;
+
+  @include bp(md) {
+    padding:2em;
+    max-width:80%;
+  }
 
   &:hover {
     filter:grayscale(0);

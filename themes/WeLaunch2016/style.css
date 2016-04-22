@@ -1538,7 +1538,8 @@ footer span {
   border-left: 0; }
 
 .page-work #work-grid {
-  padding: 1.5rem 1rem; }
+  padding: 2rem 1rem;
+  padding-left: calc(1rem + 5px); }
 
 .work-filer__discipline {
   float: left;
@@ -1587,14 +1588,14 @@ footer span {
   display: block;
   margin-right: 1.14595%;
   width: 100%;
-  margin-bottom: 0.75rem; }
+  margin-bottom: 15px; }
   .filter-grid .folio-item:last-child {
     margin-right: 0; }
   @media (min-width: 48em) {
     .filter-grid .folio-item {
       margin-right: 0;
-      margin-left: 0.5rem;
-      width: calc(33.33333333333333333333333333333333% - 1rem); } }
+      margin-left: 15px;
+      width: calc(33.33333333333333333333333333333333% - 30px); } }
 
 .page-about-us .lg-hero__overlay {
   text-align: center;
@@ -1659,23 +1660,15 @@ footer span {
   float: left;
   display: block;
   margin-right: 1.14595%;
-  width: 49.42702%; }
+  width: 100%; }
   .client-logo__wrap:last-child {
     margin-right: 0; }
-  .client-logo__wrap:nth-child(2n) {
-    margin-right: 0; }
-  .client-logo__wrap:nth-child(2n+1) {
-    clear: left; }
   @media (min-width: 48em) {
     .client-logo__wrap {
       float: left;
       display: block;
       margin-right: 1.14595%;
       width: 24.14053%; }
-      .client-logo__wrap:nth-child(2n) {
-        margin-right: 1.14595%; }
-      .client-logo__wrap:nth-child(2n+1) {
-        clear: none; }
       .client-logo__wrap:last-child {
         margin-right: 0; }
       .client-logo__wrap:nth-child(4n) {
@@ -1688,9 +1681,13 @@ footer span {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   transition: all .3s ease;
-  max-width: 80%;
+  max-width: 60%;
   margin-left: auto;
   margin-right: auto; }
+  @media (min-width: 48em) {
+    .client-logo__wrap img {
+      padding: 2em;
+      max-width: 80%; } }
   .client-logo__wrap img:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);

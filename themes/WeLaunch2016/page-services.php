@@ -36,8 +36,8 @@ get_header(); ?>
 			<?php ++$count; endwhile; ?>
 		</div>
 		<div class="lg-pad-y text-center">
-			<a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start your project <i class="fa fa-arrow-right"></i></a>
-		</div>
+		<a href="<?php echo home_url(); ?>/work" class="btn btn-primary">See Our Full Portfolio</a>
+	</div>
 	</section>
 </main>
 

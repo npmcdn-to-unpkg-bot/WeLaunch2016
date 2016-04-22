@@ -35,7 +35,7 @@ get_header(); ?>
 			<div class="contact-info__block eq-height">
 				<div class="contact-info__content">
 					<?php the_field('say_hello_copy'); ?>
-					<p><i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-instagram"></i></p>
+					<p><a href="http://www.twitter.com/welaunch" target="_blank" class="fa fa-twitter"></a><a href="http://www.facebook.com/welaunch.co.uk" target="_blank" class="fa fa-facebook"></a><a href="http://www.instagram.com/welaunch" target="_blank" class="fa fa-instagram"></a></p>
 				</div>
 			</div>
 			<div class="contact-map__wrapper">
