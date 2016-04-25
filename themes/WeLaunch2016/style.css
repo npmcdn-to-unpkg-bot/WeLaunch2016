@@ -401,7 +401,8 @@ body {
   background-color: #F8F8F8;
   text-align: center;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%; }
   @media (min-width: 48em) {
     body {
       text-align: left;
@@ -1234,9 +1235,17 @@ a.menu-link .fa {
       float: left;
       display: block;
       margin-right: 1.14595%;
-      width: 24.14053%; }
+      width: 24.14053%;
+      transition: all .3s ease; }
       #sidebar-wrap:last-child {
         margin-right: 0; } }
+
+@media (min-width: 48em) {
+  #sidebar-wrap.fixy {
+    position: fixed;
+    max-width: 282px;
+    top: 15px;
+    transition: all .3s ease; } }
 
 #sidebar-wrap .tumblr-wrap {
   background-color: white;
@@ -2037,6 +2046,152 @@ footer span {
   bottom: 1em;
   left: 2em; }
 
+#four-oh-four {
+  text-align: center;
+  background-color: white;
+  padding: 0; }
+  @media (min-width: 48em) {
+    #four-oh-four {
+      text-align: left; } }
+
+.four-oh-four__wrap h1 {
+  margin-top: 1em; }
+  @media (min-width: 48em) {
+    .four-oh-four__wrap h1 {
+      margin-top: 3em; } }
+
+.four-oh-four__wrap {
+  padding: 1.875em;
+  background-color: #221859;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/wl_bg-1.svg"); }
+  .four-oh-four__wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+@media (min-width: 48em) {
+  .four-oh-four__wrap .img-wrap {
+    float: left;
+    display: block;
+    margin-right: 1.14595%;
+    width: 40.99819%;
+    float: right; }
+    .four-oh-four__wrap .img-wrap:last-child {
+      margin-right: 0; } }
+
+@media (min-width: 48em) {
+  .four-oh-four__wrap .content-wrap {
+    float: left;
+    display: block;
+    margin-right: 1.14595%;
+    width: 49.42702%; }
+    .four-oh-four__wrap .content-wrap:last-child {
+      margin-right: 0; } }
+
+.four-oh-four__wrap img {
+  margin-left: auto;
+  max-width: 80%;
+  height: auto; }
+
+.four-oh-four__wrap input {
+  border: 0;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: white; }
+
+.four-oh-four__wrap input[type="submit"] {
+  background-color: white;
+  color: #221859;
+  font-family: 'Nexa Bold', sans-serif;
+  text-transform: uppercase;
+  border: 0;
+  margin-top: 0;
+  font-size: 0.875em;
+  padding: .5em 1em;
+  display: none; }
+
+.search .page-header {
+  background-color: #221859;
+  padding: 1.875em;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/wl_bg-1.svg"); }
+  .search .page-header::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.search .page-header .page-title {
+  float: left;
+  display: block;
+  margin-right: 1.14595%;
+  width: 100%; }
+  .search .page-header .page-title:last-child {
+    margin-right: 0; }
+  @media (min-width: 48em) {
+    .search .page-header .page-title {
+      float: left;
+      display: block;
+      margin-right: 1.14595%;
+      width: 32.56936%; }
+      .search .page-header .page-title:last-child {
+        margin-right: 0; } }
+
+.search .search-result__item {
+  float: left;
+  display: block;
+  margin-right: 1.14595%;
+  width: 100%;
+  padding: 1.875em;
+  border-bottom: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7; }
+  .search .search-result__item:last-child {
+    margin-right: 0; }
+  .search .search-result__item::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media (min-width: 48em) {
+    .search .search-result__item {
+      float: left;
+      display: block;
+      margin-right: 1.14595%;
+      width: 32.56936%; }
+      .search .search-result__item:last-child {
+        margin-right: 0; }
+      .search .search-result__item:nth-child(3n) {
+        margin-right: 0; }
+      .search .search-result__item:nth-child(3n+1) {
+        clear: left; } }
+
+.search .search-result__ptype {
+  color: #5f5f58; }
+
+.search input {
+  border: 0;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  color: white; }
+
+.search input[type="submit"] {
+  background-color: white;
+  color: #221859;
+  font-family: 'Nexa Bold', sans-serif;
+  text-transform: uppercase;
+  border: 0;
+  margin-top: 0;
+  font-size: 0.875em;
+  padding: .5em 1em;
+  display: none; }
+
+.search .nothing-found__content {
+  padding: 1.875em;
+  text-align: center; }
+
 #case-study-info {
   background-color: white;
   padding: 1.875em; }
@@ -2206,7 +2361,8 @@ footer span {
       float: left;
       display: block;
       margin-right: 1.14595%;
-      width: 74.71351%; }
+      width: 74.71351%;
+      float: right; }
       #blog-wrap:last-child {
         margin-right: 0; } }
 

@@ -363,9 +363,6 @@
   }
 }
 
-
-
-
 // Services
 .page-services .lg-hero__overlay {
   text-align: center;
@@ -487,4 +484,120 @@
   position: absolute;
   bottom:1em;
   left:2em;
+}
+
+// 404
+#four-oh-four {
+  text-align:center;
+  background-color:white;
+  padding:0;
+
+  @include bp(md) {
+    text-align:left;
+  }
+}
+.four-oh-four__wrap h1 {
+  margin-top:1em;
+
+  @include bp(md) {
+    margin-top:3em;
+  }
+}
+.four-oh-four__wrap {
+  padding:em(30);
+  background-color:$secondary;
+  @include clearfix;
+  color:white;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-image:url('images/wl_bg-1.svg');
+}
+.four-oh-four__wrap .img-wrap {
+
+  @include bp(md) {
+    @include span-columns(5);
+    float:right;
+  }
+}
+.four-oh-four__wrap .content-wrap {
+
+  @include bp(md) {
+    @include span-columns(6);
+  }
+}
+.four-oh-four__wrap img {
+  margin-left:auto;
+  max-width:80%;
+  height:auto;
+}
+.four-oh-four__wrap input {
+  border:0;
+  border-bottom:1px solid white;
+  background-color:transparent;
+  color:white;
+}
+.four-oh-four__wrap input[type="submit"] {
+  background-color:white;
+  color:$secondary;
+  font-family:'Nexa Bold', sans-serif;
+  text-transform:uppercase;
+  border:0;
+  margin-top:0;
+  font-size:em(14);
+  padding:.5em 1em;  
+  display:none;
+}
+
+// Search Results
+.search .page-header {
+  background-color:$secondary;
+  padding:em(30);
+  color:white;
+  @include clearfix;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-image:url('images/wl_bg-1.svg');
+}
+.search .page-header .page-title  {
+  @include span-columns(12);
+
+  @include bp(md) {
+    @include span-columns(4);
+  }
+}
+.search .search-result__item {
+  @include span-columns(12);
+  @include clearfix;
+  padding:em(30);
+  border-bottom:1px solid $grey;
+  border-right:1px solid $grey;
+
+  @include bp(md) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+.search .search-result__ptype {
+  color:lighten($black, 25%);
+}
+.search input {
+  border:0;
+  border-bottom:1px solid white;
+  background-color:transparent;
+  color:white;
+}
+.search input[type="submit"] {
+  background-color:white;
+  color:$secondary;
+  font-family:'Nexa Bold', sans-serif;
+  text-transform:uppercase;
+  border:0;
+  margin-top:0;
+  font-size:em(14);
+  padding:.5em 1em;  
+  display:none;
+}
+.search .nothing-found__content {
+  padding:em(30);
+  text-align:center;
 }

@@ -9,56 +9,52 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<main id="four-oh-four" class="container">
+	<div class="row">
+		<section class="four-oh-four__wrap">
+			<div class="img-wrap">
+				<img src="<?php echo content_url(); ?>/uploads/2016/04/404.png">
+			</div>
+			<div class="content-wrap">
+				<h1>Oops! We couldn't find what you were looking for.</h1>
+				<p><strong>Try searching for something instead...</strong></p>
+				<?php echo get_search_form(); ?>
+			</div>
+		</section>	  
+	</div>
+	<?php //Get array of terms
+	$terms = get_the_terms( $post->ID , 'industry_sectors', 'string');
+	//Pluck out the IDs to get an array of IDS
+	$term_ids = wp_list_pluck($terms,'term_id');
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'name' ); ?></h1>
-				</header><!-- .page-header -->
+	//Query posts with tax_query. Choose in 'IN' if want to query posts with any of the terms
+	//Chose 'AND' if you want to query for posts with all terms
+	  $second_query = new WP_Query( array(
+	      'post_type' => 'casestudy',	     
+	      'posts_per_page' => 3,
+	      'ignore_sticky_posts' => 1,
+	      'orderby' => 'rand',
+	      'post__not_in'=>array($post->ID)
+	   ) ); ?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'name' ); ?></p>
+	<section class="row">
+		<div class="pad-y text-center">
+			<p class="section-title">Our Case Studies</p>
+		</div>
+		<div class="row">
+	   <?php if($second_query->have_posts()) {
+	     while ($second_query->have_posts() ) : $second_query->the_post(); ?>
 
-					<?php
-						get_search_form();
+			 <a class="folio-item" href="<?php the_permalink(); ?>">
+				 <div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
+			 </a>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( name_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'name' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'name' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	   <?php endwhile; wp_reset_query();
+	   } ?>
+	   </div>
+   </section>
+      
+</main>
+	
 <?php
 get_footer();

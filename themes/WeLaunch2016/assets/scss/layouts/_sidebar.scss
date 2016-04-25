@@ -5,6 +5,15 @@
 
   @include bp(md) {
     @include span-columns(3);
+    transition:all .3s ease;
+  }
+}
+#sidebar-wrap.fixy {
+  @include bp(md) {
+    position:fixed;
+    max-width: 282px;
+    top:15px;
+    transition:all .3s ease;
   }
 }
 #sidebar-wrap .tumblr-wrap {
