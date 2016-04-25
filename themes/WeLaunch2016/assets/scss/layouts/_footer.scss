@@ -1,18 +1,28 @@
 // Footer
-#footer-services {
+footer {
   background-color:$black;
   color:white;
-  padding-left:5px;
-  padding-right:5px;
+  padding-bottom:em(15);
+  padding-top:em(15);
+  text-align:center;
 }
-#footer-services img {
+footer .footer-logo {
   max-width:225px;
-  margin:0 auto;
-  margin-bottom:rem(30);
+  margin-top:.5em;
   filter: invert(100%);
-}
+  margin-left:auto;
+  margin-right:auto;
 
-#footer-services p.lead {
+  @include bp(md) {
+    @include span-columns(3);      
+  }
+}
+footer hr {
+  border-color:rgba(255,255,255,0.2);
+  margin:0;
+  margin-bottom:1em;
+}
+footer p.lead {
   padding:0 1em;
   margin-bottom:0;
   font-size:rem(16);
@@ -27,64 +37,52 @@
     margin-bottom:0;
   }
 }
+footer form {
+  margin:0 auto;
+  text-align: center;
+  margin-top:.4em;
+  padding:1em;
 
-#footer-services ul {
-  list-style-type: none;
-  margin-bottom:0;
-  padding-left:0;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-#footer-services ul li {
-  display:inline-block;
-  color:white;
-  padding:2em;
-}
-#footer-services ul li a {
-  font-family: $font-display;
-  color:white;
-  border-bottom:2px solid $black;
-  padding-bottom:0;
-  @include transition(all .3s);
-  font-size:rem(16);
-
-  &:hover {
-    text-decoration:none;
-    color:$highlight;
-    border-bottom-color:$highlight;
-    padding-bottom:.5em;
-    @include transition(all .3s);
+  @include bp(md) {
+    @include span-columns(7);  
+    margin-left: 1.14595%;    
   }
 }
-#footer-services .footer-newsletter {
-  margin-top:1.5em;
-  display: inline-block;
+
+footer form p:first-of-type {
+  display:inline-block;
 }
-#footer-services .footer-newsletter p,
-#footer-services .footer-newsletter .fa {
+footer form p,
+footer form .fa {
   color:white;
 }
-#footer-services .footer-newsletter .fa:hover {
+footer form .fa:hover {
   text-decoration: none;
 }
-#footer-services .footer-newsletter input {
+footer form input {
   border:0;
   border-bottom:1px solid white;
   background-color:transparent;
   color:white;
   outline:0;
   padding:em(5);
-  margin-left:em(5);
+  margin-left:em(15);
   border-radius:0;
+  display:inline-block;
+  margin-top:-10px;
 }
-
-footer {
-  margin-top:0;
-  background-color: $black;
-  color:white;
+footer form button {
+  background-color:transparent;
+  border:0;
+}
+footer .footer-social {
   text-align:center;
-  min-height:65px;
-  padding:20px 15px;
-  border-top:1px solid rgba(255,255,255,0.1);
+  margin-top:.4em;
+
+  @include bp(md) {
+    @include span-columns(2);  
+    @include omega(3n);    
+  }
 }
 footer a {
   color:$highlight;
@@ -96,6 +94,19 @@ footer span {
   padding-left:5px;
   padding-right:5px;
   font-size:em(20);
-  margin-top:0.67em;
+  margin-top:.85em;
   color:white;
+}
+
+.btn-top {
+  position:fixed;
+  padding:.5em .75em;
+  background-color:white;
+  right:0;
+  bottom:1em;
+  display:none;
+}
+.btn-top .fa {
+  font-size:em(14);
+  color:$black;
 }

@@ -103,6 +103,17 @@ $menulink.click(function() {
   return false;
 });});
 
+// Show 'Back to Top' at halfway
+$(window).scroll(function () { 
+  if ($(window).scrollTop() > $('body').height() / 2) {
+    $('.btn-top').show(500);
+  } else {
+    $('.btn-top').hide(500);
+  }
+});
+
+
+
 /*!
  * skrollr core
  *

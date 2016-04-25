@@ -23,7 +23,7 @@ get_header(); ?>
 				<p class="small"><strong><?php name_posted_on(); ?></strong></p>
 			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+			<div class="blog-content__wrap">
 				<?php the_post_thumbnail(); ?>
 				<?php the_content(); ?>
 				<div class="text-center">

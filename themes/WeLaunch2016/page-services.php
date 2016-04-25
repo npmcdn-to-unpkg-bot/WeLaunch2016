@@ -28,12 +28,17 @@ get_header(); ?>
 			<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 				<a href="<?php the_permalink(); ?>" class="panel panel-services block-<?php echo $count++; ?> eq-height">
 					<div class="panel-body">
-						<h4><?php the_title(); ?></h4>
-						<!-- <p><?php //echo wp_trim_words( get_the_excerpt(), 40, '...' ); ?></p> -->	
+						<h4><?php the_title(); ?></h4>						
 						<p><?php the_excerpt(); ?></p>	
 					</div>
 				</a>
 			<?php ++$count; endwhile; ?>
+			<a href="<?php echo home_url('/contact'); ?>" class="panel panel-services panel-services__contact eq-height">
+					<div class="panel-body">
+						<h4>Get in touch</h4>						
+						<p>We’re always happy to be introduced to nice people, so please drop us a line if you’d like to chat through a particular project and we’ll set up a time to meet. </p>	
+					</div>
+				</a>
 		</div>
 		<div class="lg-pad-y text-center">
 		<a href="<?php echo home_url(); ?>/work" class="btn btn-primary">See Our Full Portfolio</a>

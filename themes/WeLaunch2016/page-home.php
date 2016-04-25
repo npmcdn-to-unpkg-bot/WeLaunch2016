@@ -88,7 +88,7 @@ get_header(); ?>
 		</div>
 	</section>
 	<div class="lg-pad-y text-center">
-		<a href="<?php echo home_url(); ?>/work" class="btn btn-primary">See Our Full Portfolio</a>
+		<a href="<?php echo home_url(); ?>/news" class="btn btn-primary">Read More</a>
 	</div>
 </main>
 

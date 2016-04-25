@@ -62,7 +62,7 @@
 // Our Work
 .page-work .work-filter {
   width:100%;
-  padding:0 em(30);
+  padding:em(30);
   margin-bottom:em(15);
   margin-top:em(15);
   position:relative;
@@ -77,14 +77,13 @@
 }
 
 .page-work .work-filter h4 {
-  margin-bottom:22.5px;
-  margin-top:3rem;
+  margin-top:0;
+  margin-bottom:1.2em;  
   float:left;
 }
 
 .page-work .work-filter .fa {
-  margin-top:3rem;
-  margin-left:1.5rem;
+  margin-left:1em;
   transform:rotate(0deg);
   -webkit-transform:rotate(0deg);
   cursor: pointer;
@@ -101,6 +100,7 @@
   padding-left:0;
   padding-bottom: 3rem;
   margin-bottom: 0;
+  margin-top:0;
 }
 .work-filter .work-filter-list > li {
   display:block;
@@ -135,8 +135,10 @@
 }
 
 .page-work #work-grid {
-  padding:2rem 1rem;
-  padding-left:calc(1rem + 5px); 
+  // padding:2rem 1rem;
+  // padding-left:calc(1rem + 5px); 
+  padding:1em;
+  padding-left:1.2em;
 }
 
 .work-filer__discipline {
@@ -169,8 +171,9 @@
 
   @include bp(md) {
     margin-right:0;
-    margin-left:15px;
-    width: calc(33.33333333333333333333333333333333% - 30px);
+    margin-right:15px;
+    @include omega(3n);
+    width: calc(33.33333333333333333333333333333333% - 15px);
   }
 }
 // About Us
@@ -263,14 +266,14 @@
 }
 
 // Contact
-#contact-main {
-  margin-top:1em;
-}
+
 .contact-main__block {
   @include span-columns(12);
 
   @include bp(md) {
     @include span-columns(6);
+    @include omega();
+    width:50%;
   }
 }
 .contact-main__content {
@@ -290,7 +293,8 @@
   background-color:$secondary;
   color:white;
   padding:em(30);
-  border-box:box-sizing;
+  box-sizing:border-box;
+  height:100%;
 }
 .contact-info__content a {
   color:white;
@@ -315,11 +319,17 @@
 .contact-form__wrapper {
   @include span-columns(12);
   text-align: center;
+  padding-top:2em;
 
   @include bp(md) {
-    @include span-columns(8);
-    @include shift(2);
+    @include span-columns(6);
+    @include omega();
+    width:50%;
+    padding-top:0;
   }
+}
+.contact-form__wrapper h3 {
+  margin-top:1.8em;
 }
 .contact-form__wrapper input,
 .contact-form__wrapper textarea {
@@ -336,10 +346,21 @@
   padding-top:em(30);
 }
 .contact-form__wrapper .wpcf7 input[type="submit"] {
-  background:transparent;
-  border-bottom:1px solid $black;
+  background-color:$secondary;
+  color:white;
+  width: 381px;
+  padding:1em 0;
   text-transform: uppercase;
   border:0;
+  border:2px solid $secondary;
+  font-family:'Nexa Bold', sans-serif;
+  transition:all .3s ease;
+
+  &:hover {
+    background-color:transparent;
+    color:$secondary;
+    transition:all .3s ease;
+  }
 }
 
 
@@ -399,6 +420,16 @@
   border-bottom:1px solid $black;
   display: inline-block;
   padding-bottom:5px;
+}
+.panel-services__contact {
+  color:white;
+ 
+}
+.panel-services__contact h4 {
+  border-color:white;
+}
+.panel-services__contact::after {
+  opacity:1;
 }
 .service-features__list {
   list-style-type: none;

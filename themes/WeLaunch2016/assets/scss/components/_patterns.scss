@@ -114,7 +114,7 @@
 // Folio
 .folio-item {
   @include span-columns(12);
-	height:272px;
+	height:269px;
 	position:relative;
 	margin-bottom:1em;
   outline:0;
@@ -123,6 +123,12 @@
   position: relative;
 
   @include bp(md) {
+    @include omega(2n);
+    @include span-columns(6);
+  }
+
+  @include bp(lg) {
+    @include omega-reset(2n);
     @include omega(3n);
     @include span-columns(4);
   }

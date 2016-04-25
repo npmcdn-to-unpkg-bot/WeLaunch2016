@@ -193,6 +193,14 @@
     background-color:$black;
   }
 }
+.blog-content__wrap {
+  @include span-columns(12);
+
+  @include bp(md) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}
 
 // Services - Single
 .single-service main {
