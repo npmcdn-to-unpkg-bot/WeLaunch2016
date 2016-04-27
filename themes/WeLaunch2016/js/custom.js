@@ -112,18 +112,18 @@ $(window).scroll(function () {
   }
 });
 
-// Blog Sidebar Fixy
-jQuery(function($) {
-  function fixDiv() {
-    var $cache = $('#sidebar-wrap');
-    if ($(window).scrollTop() > 100)
-      $cache.addClass('fixy');
-    else
-      $cache.removeClass('fixy');
-  }
-  $(window).scroll(fixDiv);
-  fixDiv();
-});
+// // Blog Sidebar Fixy
+// jQuery(function($) {
+//   function fixDiv() {
+//     var $cache = $('#sidebar-wrap');
+//     if ($(window).scrollTop() > 100)
+//       $cache.addClass('fixy');
+//     else
+//       $cache.removeClass('fixy');
+//   }
+//   $(window).scroll(fixDiv);
+//   fixDiv();
+// });
 
 
 

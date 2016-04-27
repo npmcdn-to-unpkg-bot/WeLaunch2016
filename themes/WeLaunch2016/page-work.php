@@ -19,7 +19,7 @@ get_header(); ?>
 			<h4>Filter By</h4>
 			<span class="fa fa-chevron-up" id="filter-toggle"></span>
 		</div>
-		<div class="row collapse in" id="list-wrap" aria-expanded="true">
+		<div class="row collapse" id="list-wrap" aria-expanded="true">
 			<div class="work-filer__discipline">
 				<p>Discipline</p>
 				<ul class="work-filter-list clearfix">

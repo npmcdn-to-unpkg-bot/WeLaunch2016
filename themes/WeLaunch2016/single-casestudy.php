@@ -89,6 +89,10 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php else: ?>
+			<div class="case-study__content pad">
+				<h3>The Solution</h3>
+				<?php the_field('the_solution'); ?>
+			</div>
 			<div class="img-container">
 				<?php the_field('images'); ?>
 			</div>

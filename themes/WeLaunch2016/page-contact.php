@@ -42,7 +42,7 @@ get_header(); ?>
 				</div>
 			</div>			
 			<div class="contact-form__wrapper eq-height">				
-				<h3 class="section-title">Start Your Project</h3>
+				<!-- <h3 class="section-title">Start Your Project</h3> -->
 				<?php echo do_shortcode('[contact-form-7 id="2470" title="Contact"]'); ?>
 			</div>
 		</div><!-- end row -->

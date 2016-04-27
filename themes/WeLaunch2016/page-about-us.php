@@ -27,37 +27,16 @@ get_header(); ?>
 				<h3>About Us</h3>
 				<?php the_field('about_us'); ?>
 			</div>
+			<div class="about-us__content" style="padding:0;">
+				<img src="<?php echo content_url(); ?>/uploads/2016/04/row1_welaunch_aboutus.jpg">
+			</div>
 		</div>
 	</section>
 	<section class="clearfix sr" id="about-us-team">
 		<div class="no-gutter">
 			<!-- <aside style="background-image:url('<?php //the_field('team_img'); ?>');" class="img-block eq-height"></aside> -->
 			<aside class="aside-img__carousel eq-height">
-				<?php if( get_field('team_carousel') ): ?>
-					<div id="team-carousel" class="carousel slide" data-ride="carousel">
-				    <!-- Indicators -->
-				    <ol class="carousel-indicators">
-						<?php
-						$ii=0;
-						while( have_rows('team_carousel') ): the_row();
-							if ($ii == 0) {
-								echo '<li data-target="#team-carousel" data-slide-to="0" class="active animated fadeIn"></li>';
-							} else {
-								echo '<li data-target="#team-carousel" data-slide-to="'.$ii.'" class="animated fadeIn"></li>';
-							}
-						$ii++;
-						endwhile; ?>
-				    </ol>
-				    <div class="carousel-inner" role="listbox">
-							<?php $i = 0; ?>
-							<?php while(has_sub_field('team_carousel')): ?>
-							<div class="item <?php if($i === 0) { ?> active <?php } ?>">
-								<div class="img-block" alt="Our Team Members" style="background-image:url('<?php the_sub_field('team_image'); ?>');"></div>
-							</div>
-							<?php ++$i; endwhile; ?>
-						</div>
-					</div>
-					<?php endif; ?>
+				<img src="<?php echo content_url(); ?>/uploads/2016/04/row2_welaunch_aboutus.jpg">
 				</aside>
 				<div class="about-us-team__block eq-height">
 					<div class="about-us-team__content">
@@ -68,12 +47,23 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
+	<section class="clearfix sr">
+			<div class="about-us__content">
+				<h3>Join Us</h3>
+				<p>We know that it takes the best people to create truly inspiring, stand-out brands and communications. That’s why we’re always looking to meet new people that can work with us to bring our projects to life in the best possible ways. If you have a passion for delivering unique, relevant and distinctive solutions that work in the real world, then we’d love to hear from you.</p>												
+				<p><strong><a href="<?php echo home_url(); ?>/contact">Drop us a line</a> with your CV and some examples of work and we’ll get back to you as soon as we can.</strong></p>
+			</div>
+			<div class="about-us__content" style="padding:0;">
+				<img src="<?php echo content_url(); ?>/uploads/2016/04/row3_welaunch_aboutus.jpg">
+			</div>
+		</div>
+	</section>
 
 	<section class="sr" id="about-us-clients">
 		<div class="clearfix pad">
 
 			<div class="text-center">
-				<h2>Who we've worked with</h2>
+				<h2>Clients we work with</h2>
 			</div>
 
 			<div class="row">
