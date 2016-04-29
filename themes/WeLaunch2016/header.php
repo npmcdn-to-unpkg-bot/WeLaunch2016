@@ -18,7 +18,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     (function() {
         var path = '//easy.myfonts.net/v2/js?sid=227095(font-family=Nexa+Regular)&sid=227099(font-family=Nexa+Bold)&sid=227102(font-family=Nexa+Light)&key=CJHWCmZyKC',
             protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
@@ -29,7 +29,7 @@
         var head = document.getElementsByTagName("head")[0];
         head.appendChild(trial);
     })();
-</script>
+</script> -->
 
 </head>
 <body <?php body_class() ; ?>>

@@ -9,9 +9,9 @@ $highlight: #ffdb12;
 $welaunch-blue:#23273a;
 $welaunch-yellow: #ffdb12;
 
-$black: #1d1d1b;
+$black: #1d1d1d;
 $grey: #e7e7e7;
-$dark-grey: #ADACAC;
+$dark-grey: #767676;
 
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 16) + px;

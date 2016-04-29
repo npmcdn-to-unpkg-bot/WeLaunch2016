@@ -21,7 +21,7 @@ get_header(); ?>
 			<?php else: ?>
 				<h1><?php the_title() ?></h1>
 			<?php endif; ?>
-			<a class="fa fa-chevron-down" href="#case-study-info"></a>
+			<!-- <a class="fa fa-chevron-down" href="#case-study-info"></a> -->
 		</div>
 	</div>
 <?php else: ?>
@@ -131,7 +131,8 @@ get_header(); ?>
 	     while ($second_query->have_posts() ) : $second_query->the_post(); ?>
 
 			 <a class="folio-item" href="<?php the_permalink(); ?>">
-				 <div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
+				 <!-- <div class="folio-item__inner" style="background-image: url('<?php //$image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div> -->
+				 <?php the_post_thumbnail(); ?>
 			 </a>
 
 	   <?php endwhile; wp_reset_query();

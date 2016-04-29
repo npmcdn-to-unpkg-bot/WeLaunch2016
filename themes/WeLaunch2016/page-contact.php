@@ -38,7 +38,9 @@ get_header(); ?>
 			<div class="contact-info__block eq-height">
 				<div class="contact-info__content">
 					<?php the_field('say_hello_copy'); ?>
-					<p><a href="http://www.twitter.com/welaunch" target="_blank" class="fa fa-twitter"></a><a href="http://www.facebook.com/welaunch.co.uk" target="_blank" class="fa fa-facebook"></a><a href="http://www.instagram.com/welaunch" target="_blank" class="fa fa-instagram"></a></p>
+					<form action="http://welaunch.createsend.com/t/d/s/tlhjy/" method="post" id="subForm">
+						<input placeholder="Subscribe to our newsletter" id="fieldEmail" type="text"><button type="submit"><i class="fa fa-chevron-right"></i></button>
+					</form>
 				</div>
 			</div>			
 			<div class="contact-form__wrapper eq-height">				

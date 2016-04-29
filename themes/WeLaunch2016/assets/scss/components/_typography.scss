@@ -7,6 +7,17 @@
 @font-face {font-family: 'CynthoSlabPro-Regular';src: url('webfonts/3051D0_1_0.eot');src: url('webfonts/3051D0_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3051D0_1_0.woff2') format('woff2'),url('webfonts/3051D0_1_0.woff') format('woff'),url('webfonts/3051D0_1_0.ttf') format('truetype');}
 @font-face {font-family: 'CynthoSlabPro-SemiBold';src: url('webfonts/3051D0_2_0.eot');src: url('webfonts/3051D0_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3051D0_2_0.woff2') format('woff2'),url('webfonts/3051D0_2_0.woff') format('woff'),url('webfonts/3051D0_2_0.ttf') format('truetype');}
 
+@font-face {
+    font-family: 'Nexa Bold';
+    src: url('webfonts/nexa_bold-webfont.eot');
+    src: url('webfonts/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('webfonts/nexa_bold-webfont.woff2') format('woff2'),
+         url('webfonts/nexa_bold-webfont.woff') format('woff'),
+         url('webfonts/nexa_bold-webfont.ttf') format('truetype'),
+         url('webfonts/nexa_bold-webfont.svg#nexa_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 h1 {
   font-size:em(39.813);

@@ -54,7 +54,7 @@ get_header(); ?>
 				<p><strong><a href="<?php echo home_url(); ?>/contact">Drop us a line</a> with your CV and some examples of work and we’ll get back to you as soon as we can.</strong></p>
 			</div>
 			<div class="about-us__content" style="padding:0;">
-				<img src="<?php echo content_url(); ?>/uploads/2016/04/row3_welaunch_aboutus.jpg">
+				<img src="<?php echo content_url(); ?>/uploads/2016/04/wl_about-us-row3.png">
 			</div>
 		</div>
 	</section>
@@ -67,19 +67,44 @@ get_header(); ?>
 			</div>
 
 			<div class="row">
+
 				<?php
 				$posts = get_field('clients');
 				if( $posts ): ?>
+			
 				    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-				        <?php setup_postdata($post); ?>
-				        <div class="client-logo__wrap">
-							<article>
-								<?php //the_post_thumbnail('full', array( 'class'	=> 'img-responsive')); ?>
-								<img src="<?php the_field('logo'); ?>" class="img-responsive client-logo">
-							</article>
+				      <?php setup_postdata($post); ?>
+				      <div class="client-logo__wrap">
+
+									<?php $casestudies = get_posts(array(
+									'post_type' => 'casestudy',
+									'meta_query' => array(
+									array(
+									'key' => 'client',
+									'value' => '"' . get_the_ID() . '"', 
+									'compare' => 'LIKE'
+									)
+									)
+									));
+									?>
+
+							<?php $count = count($casestudies); ?>
+							<?php if ($count > 1) { ?>
+								<article>
+									<a href="<?php echo get_the_permalink($casestudies[0]->ID); ?>"><img src="<?php the_field('logo'); ?>" class="img-responsive client-logo"></a>
+								</article>
+							<?php } elseif ($count == 1) { ?>
+								<article>
+									<a href="<?php echo get_the_permalink($casestudies[0]->ID); ?>"><img src="<?php the_field('logo'); ?>" class="img-responsive client-logo"></a>
+								</article>
+							<?php } else { ?>
+								<article>
+									<img src="<?php the_field('logo'); ?>" class="img-responsive client-logo">
+								</article>
+							<?php } ?>
 						</div>
 				    <?php endforeach; ?>
-				    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 				<?php  endif; ?>
 			</div> <!-- end col -->
 

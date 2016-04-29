@@ -58,9 +58,9 @@ $(window).resize(function(){
 // init Isotope
 var $grid = $('.filter-grid').isotope({
   layoutMode: 'fitRows',
-	fitRows: {
-	  gutter: 4
-	}
+  fitRows: {
+    gutter: 4
+  }
 });
 // filter items on button click
 $('.filter-btn').on( 'click', function() {
@@ -70,9 +70,9 @@ $('.filter-btn').on( 'click', function() {
 
 // Work Filter Active
 $('.work-filter-list li').click(function(e) {
-	e.preventDefault();
-	$('li').removeClass('active');
-	$(this).addClass('active');
+  e.preventDefault();
+  $('li').removeClass('active');
+  $(this).addClass('active');
 });
 
 // Stops auto-scrolling on Google Maps
@@ -111,19 +111,6 @@ $(window).scroll(function () {
     $('.btn-top').hide(500);
   }
 });
-
-// // Blog Sidebar Fixy
-// jQuery(function($) {
-//   function fixDiv() {
-//     var $cache = $('#sidebar-wrap');
-//     if ($(window).scrollTop() > 100)
-//       $cache.addClass('fixy');
-//     else
-//       $cache.removeClass('fixy');
-//   }
-//   $(window).scroll(fixDiv);
-//   fixDiv();
-// });
 
 
 

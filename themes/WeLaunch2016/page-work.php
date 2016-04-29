@@ -54,14 +54,20 @@ get_header(); ?>
 	<!-- Portfolio Blocks -->
 	<section id="work-grid">
 	<div id="portfolio" class="row filter-grid">
-		<?php $the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
+		<?php $the_query = get_field('work_case_studies'); ?>
+		<?php //$the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php query_posts($query_string . '&cat=-163'); ?>
-		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+		<?php if( $the_query): ?>
+		<?php foreach( $the_query as $post): // variable must be called $post (IMPORTANT) ?>
+			<?php setup_postdata($post); ?>
 		<?php $terms = get_the_terms($post->ID, "industry_sectors"); ?>	
 			<a class="folio-item filter-item <?php the_field('discipline'); ?> <?php foreach ( $terms as $term ) { echo $term->slug . ' '; } ?> <?php echo get_the_time('Y'); ?>"href="<?php the_permalink(); ?>">
-				<div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
+				<!-- <div class="folio-item__inner" style="background-image: url('<?php //$image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div> -->
+				<?php the_post_thumbnail(); ?>
 			</a>
-		<?php endwhile; ?>
+		<?php endforeach; ?>
+		<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+		<?php endif; ?>
 	</div>
 	</section>
 </main>

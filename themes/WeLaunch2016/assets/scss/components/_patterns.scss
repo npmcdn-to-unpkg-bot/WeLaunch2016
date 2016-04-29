@@ -35,11 +35,24 @@
 }
 @include bp(md) {
   .lg-hero h1 {
-    max-width: 65%;
+    max-width: 60%;
     font-size: em(48);
   }
   .lg-hero p {
     max-width: 45%;
+  }
+}
+.page .lg-hero {
+  background-position:center;
+
+  @include bp(lg) {
+    background-position:center;
+  }
+}
+.home .lg-hero {
+  background-position: right;
+  @include bp(md) {
+    background-position:center;
   }
 }
 
@@ -114,10 +127,11 @@
 // Folio
 .folio-item {
   @include span-columns(12);
-	height:269px;
+
 	position:relative;
 	margin-bottom:1em;
   outline:0;
+  min-height:170px;
   overflow: hidden;
   z-index:1;
   position: relative;
@@ -125,13 +139,20 @@
   @include bp(md) {
     @include omega(2n);
     @include span-columns(6);
+
   }
 
   @include bp(lg) {
     @include omega-reset(2n);
     @include omega(3n);
     @include span-columns(4);
+    min-height:250px;
   }
+}
+.folio-item img {
+  width:100%;
+  transform:scale(1);
+  transition:all .3s ease;
 }
 .folio-item .folio-item__inner {
   background-size:cover;
@@ -166,7 +187,7 @@
 			top:0;
 	}
 }
-.folio-item:hover .folio-item__inner {
+.folio-item:hover img {
   opacity:0.8;
   transform:scale(1.05);
   transition:all .3s ease;

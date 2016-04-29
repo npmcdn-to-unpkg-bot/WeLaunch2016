@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 <section class="tumblr-wrap">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	<div class="text-center">
-		<a href="http://welaunch.tumblr.com" target="_blank" class="btn btn-primary">View Tumblr</a>
+		<a href="http://welaunch.tumblr.com" target="_blank" class="btn btn-primary">More Inspiration</a>
 	</div>
 </section>
 <div class="twitter-wrap">

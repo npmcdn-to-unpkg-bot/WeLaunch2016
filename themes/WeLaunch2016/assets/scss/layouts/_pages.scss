@@ -59,10 +59,11 @@
   border-radius:0;
 }
 
+
 // Our Work
 .page-work .work-filter {
   width:100%;
-  padding:em(30);
+  padding:1em;
   margin-bottom:1em;
   margin-top:1em;
   position:relative;
@@ -77,9 +78,9 @@
 }
 
 .page-work .work-filter h4 {
-  margin-top:0;
-  margin-bottom:1.2em;  
+  margin-top:1em;  
   display:inline-block;
+  font-size:1.2em;
 
   @include bp(md) {
     float:left;
@@ -88,6 +89,7 @@
 
 .page-work .work-filter .fa {
   margin-left:1em;
+  margin-top:1em;
   transform:rotate(0deg);
   -webkit-transform:rotate(0deg);
   cursor: pointer;
@@ -110,8 +112,7 @@
   display:block;
   float:left;
   width:100%;
-  padding-top:.15em;
-  padding-bottom:.15em;
+
 
   @include bp(md) {
     width:50%;
@@ -123,7 +124,7 @@
   cursor:pointer;
   border-bottom:1px solid transparent;
   padding-bottom:5px;
-  color:$dark-grey;
+  // color:$dark-grey;
   font-size:rem(14);
   @include transition(all .3s);
 
@@ -253,14 +254,26 @@
   padding:2em;
   // filter:grayscale(100%);
   transition:all .3s ease;
-  max-width:60%;
+  width:75%;
   margin-left:auto;
   margin-right:auto;
 
   @include bp(md) {
     padding:2em;
-    max-width:80%;
+    width:14em;    
   } 
+
+}
+.client-logo__wrap a:hover img {
+  opacity:0.5;
+  transform:all .3s ease;
+}
+
+#testimonials {
+  min-height:460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #testimonial-carousel .testimonial-item__wrap {
 
@@ -322,7 +335,47 @@
   padding-left:5px;
   padding-right:5px;
   font-size:em(20);
+}.contact-info__content form {
+  display:block;  
+  padding:0 15px;
+  width:80%;
+  margin-top:1em;
+  margin-left:auto;
+  margin-right:auto;
+
+  @include bp(lg) {
+    width:50%;
+    float:left;
+    display:inline-block;   
+    margin:0;
+    padding:0;
+  }
 }
+.contact-info__content form input {
+  background:transparent;
+  border:0;
+  border-bottom:1px solid white;
+  color:white;
+  width:85%;
+  font-size:em(14);
+  padding:.25em;
+  outline-color:rgba(255,255,255,0.25);  
+}
+.contact-info__content form button {
+  background-color:transparent;
+  border:0;
+  color:white;
+  opacity:1;
+  transition: all .3s ease;
+}
+.contact-info__content form button:hover {
+  opacity:0.75;
+  transition: all .3s ease;
+}
+.contact-info__content form button .fa {
+  font-size:em(14);
+}
+
 .contact-map__wrapper {
   @include span-columns(12);
 
@@ -365,20 +418,20 @@
   padding-top:em(60);
 }
 .contact-form__wrapper .wpcf7 input[type="submit"] {
-  background-color:transparent;
-  color:$black;
+  background-color:$black;
+  color:white;
   padding:.5em 0;
   text-transform: uppercase;
   border:0;
-  border:1px solid $grey;
+  border:1px solid transparent;
   font-family:'Nexa Bold', sans-serif;
   transition:all .3s ease;
   display:inline-block;
   width:25%;
 
   &:hover {
-    background-color:$black;
-    color:white;
+    background-color:transparent;
+    color:$black;
     border-color:$black;
     transition:all .3s ease;
   }

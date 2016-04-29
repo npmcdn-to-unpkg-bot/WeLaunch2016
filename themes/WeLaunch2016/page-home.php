@@ -63,16 +63,17 @@ get_header(); ?>
 		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
 			<?php setup_postdata($post); ?>
 				<a class="folio-item" href="<?php the_permalink(); ?>">
-					<div class="folio-item__inner" style="background-image: url('<?php $image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div>
+					<!-- <div class="folio-item__inner" style="background-image: url('<?php //$image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div> -->
+					<?php the_post_thumbnail(); ?>
 				</a>
 			<?php endforeach; ?>
 			<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 		<?php endif; ?>
 	</div>
 	<div class="pad-y text-center">
+		
 		<p class="section-title">Latest News</p>
 	</div>
-
 	<section id="home-latest">
 		<div class="no-gutter clearfix">
 		<?php $the_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC') ); ?>
@@ -87,8 +88,8 @@ get_header(); ?>
 			<?php ++$count; endwhile; ?>
 		</div>
 	</section>
-	<div class="lg-pad-y text-center">
-		<a href="<?php echo home_url(); ?>/news" class="btn btn-primary">Read More</a>
+	<div class="pad-y text-center">
+		<a href="<?php echo home_url(); ?>/news" class="btn btn-primary">Read More </a>
 	</div>
 </main>
 
