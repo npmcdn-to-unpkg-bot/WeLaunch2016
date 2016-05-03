@@ -143,7 +143,6 @@
   // padding:2rem 1rem;
   // padding-left:calc(1rem + 5px); 
   padding:1em;
-  padding-left:1.2em;
 }
 
 .work-filer__discipline {
@@ -175,9 +174,7 @@
   margin-bottom:15px;
 
   @include bp(md) {
-    margin-right:0;
-    margin-right:15px;
-    @include omega(3n);
+    margin:7.5px;
     width: calc(33.33333333333333333333333333333333% - 15px);
   }
 }
