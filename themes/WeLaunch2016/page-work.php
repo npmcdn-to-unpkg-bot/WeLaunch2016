@@ -53,7 +53,7 @@ get_header(); ?>
 	<br>
 	<!-- Portfolio Blocks -->
 	<section id="work-grid">
-	<div id="portfolio" class="row filter-grid">
+	<div id="portfolio" class="row filter-grid" data-isotope="{ "itemSelector": ".folio-item", "masonry": { "columnWidth": 200 } }">
 		<?php $the_query = get_field('work_case_studies'); ?>
 		<?php //$the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php query_posts($query_string . '&cat=-163'); ?>

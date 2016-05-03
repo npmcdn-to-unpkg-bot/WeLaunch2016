@@ -173,7 +173,6 @@
 .filter-grid .folio-item {
   @include span-columns(12);
   margin-bottom:15px;
-  float:none;
 
   @include bp(md) {
     margin-right:0;
