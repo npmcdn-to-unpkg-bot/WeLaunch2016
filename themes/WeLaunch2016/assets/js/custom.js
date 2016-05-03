@@ -37,23 +37,26 @@ $(window).resize(function(){
  equalheight('.eq-height');
 });
 
-//isotope by MetaFizzy - http://isotope.metafizzy.co
 
+// Isotope
+var grid = document.querySelector('.filter-grid');
+var iso = new Isotope( grid, {
+  // options...
+  itemSelector: '.folio-item',
+  layoutMode: 'fitRows',
+});
 // init Isotope
+var $grid = $('.filter-grid').isotope({
+  // options
+});
+$('.filter-btn').on( 'click', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});
 
-//   var $grid = $('.filter-grid').isotope({
-//     itemSelector: '.folio-item',
-//     layoutMode: 'fitRows',
-//     fitRows: {
-//       gutter: 4
-//     }
-//   });
 
-// // filter items on button click
-// $('.filter-btn').on( 'click', function() {
-//   var filterValue = $(this).attr('data-filter');
-//   $grid.isotope({ filter: filterValue });
-// });
+
+
 
 // Work Filter Active
 $('.work-filter-list li').click(function(e) {

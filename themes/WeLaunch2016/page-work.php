@@ -14,7 +14,7 @@
 
 get_header(); ?>
 <main class="container">
-	<!-- <section class="work-filter" >
+	<section class="work-filter" >
 		<div class="row">
 			<h4>Filter By</h4>
 			<span class="fa fa-chevron-up" id="filter-toggle"></span>
@@ -38,22 +38,21 @@ get_header(); ?>
 				<ul class="work-filter-list clearfix">
 					<!-- List all Industry Sectors -->
 					<?php
-					//$taxonomy = 'industry_sectors';
-					//$tax_terms = get_terms($taxonomy);
+					$taxonomy = 'industry_sectors';
+					$tax_terms = get_terms($taxonomy);
 					?>
 					<?php
-					//foreach ($tax_terms as $tax_term) {
-					//echo '<li>' . '<a class="filter-btn" href="" data-filter=".'. $tax_term->slug. '" title="' . sprintf( __( "View all posts in %s" ), $tax_term->name ) . '" ' . '>' . $tax_term->name.'</a></li>';
-					//}
+					foreach ($tax_terms as $tax_term) {
+					echo '<li>' . '<a class="filter-btn" href="" data-filter=".'. $tax_term->slug. '" title="' . sprintf( __( "View all posts in %s" ), $tax_term->name ) . '" ' . '>' . $tax_term->name.'</a></li>';
+					}
 					?>
-				<!-- </ul>
+				 </ul>
 			</div>
 		</div>
-	</section> -->
-	<br>
+	</section>
 	<!-- Portfolio Blocks -->
 	<section id="work-grid">
-	<div id="portfolio" class="row filter-grid" data-isotope="{ "itemSelector": ".folio-item", "masonry": { "columnWidth": 200 } }">
+	<div id="portfolio" class="row filter-grid">
 		<?php $the_query = get_field('work_case_studies'); ?>
 		<?php //$the_query = new WP_Query( array('post_type' => 'casestudy', 'posts_per_page' => -1, 'order' => 'DESC') ); ?>
 		<?php query_posts($query_string . '&cat=-163'); ?>
