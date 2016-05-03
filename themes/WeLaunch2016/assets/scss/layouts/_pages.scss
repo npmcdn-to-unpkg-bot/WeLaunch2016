@@ -412,19 +412,18 @@
   box-shadow: none;
 }
 .contact-form__wrapper .wpcf7 {
-  padding-top:em(60);
+  padding-top:em(90);
 }
 .contact-form__wrapper .wpcf7 input[type="submit"] {
   background-color:$black;
   color:white;
-  padding:.5em 0;
+  padding:.5em 1em;
   text-transform: uppercase;
   border:0;
   border:1px solid transparent;
   font-family:'Nexa Bold', sans-serif;
   transition:all .3s ease;
-  display:inline-block;
-  width:25%;
+  display:inline-block; 
 
   &:hover {
     background-color:transparent;

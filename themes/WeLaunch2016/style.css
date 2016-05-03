@@ -1915,19 +1915,18 @@ footer .footer-social .fa {
   box-shadow: none; }
 
 .contact-form__wrapper .wpcf7 {
-  padding-top: 3.75em; }
+  padding-top: 5.625em; }
 
 .contact-form__wrapper .wpcf7 input[type="submit"] {
   background-color: #1d1d1d;
   color: white;
-  padding: .5em 0;
+  padding: .5em 1em;
   text-transform: uppercase;
   border: 0;
   border: 1px solid transparent;
   font-family: 'Nexa Bold', sans-serif;
   transition: all .3s ease;
-  display: inline-block;
-  width: 25%; }
+  display: inline-block; }
   .contact-form__wrapper .wpcf7 input[type="submit"]:hover {
     background-color: transparent;
     color: #1d1d1d;
