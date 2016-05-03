@@ -41,19 +41,19 @@ $(window).resize(function(){
 
 // init Isotope
 
-  var $grid = $('.filter-grid').isotope({
-    itemSelector: '.folio-item',
-    layoutMode: 'fitRows',
-    fitRows: {
-      gutter: 4
-    }
-  });
+//   var $grid = $('.filter-grid').isotope({
+//     itemSelector: '.folio-item',
+//     layoutMode: 'fitRows',
+//     fitRows: {
+//       gutter: 4
+//     }
+//   });
 
-// filter items on button click
-$('.filter-btn').on( 'click', function() {
-  var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
-});
+// // filter items on button click
+// $('.filter-btn').on( 'click', function() {
+//   var filterValue = $(this).attr('data-filter');
+//   $grid.isotope({ filter: filterValue });
+// });
 
 // Work Filter Active
 $('.work-filter-list li').click(function(e) {
