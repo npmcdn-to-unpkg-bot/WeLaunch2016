@@ -44,6 +44,9 @@ var iso = new Isotope( grid, {
   // options...
   itemSelector: '.folio-item',
   layoutMode: 'fitRows',
+  fitRows: {
+    gutter : '16'
+  }
 });
 // init Isotope
 var $grid = $('.filter-grid').isotope({

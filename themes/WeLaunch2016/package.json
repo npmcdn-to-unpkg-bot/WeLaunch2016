@@ -11,6 +11,7 @@
   "devDependencies": {
     "bourbon": "^4.2.6",
     "bourbon-neat": "^1.7.4",
+    "devbridge-styleguide": "^0.4.8",
     "fs-extra": "^0.26.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",

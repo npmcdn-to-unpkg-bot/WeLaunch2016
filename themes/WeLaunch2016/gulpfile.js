@@ -10,6 +10,7 @@ var livereload = require('gulp-livereload');
 var fs = require('node-fs');
 var fse = require('fs-extra');
 var json = require('json-file');
+var styleguide = require('devbridge-styleguide');
 var themeName = json.read('./package.json').get('themeName');
 var themeDir = '../' + themeName;
 
@@ -71,6 +72,10 @@ gulp.task('watch', function() {
       // reload browser whenever any PHP file changes
       livereload.changed( file );
     } );
+});
+
+gulp.task('start-styleguide', function () {
+  styleguide.startServer();
 });
 
 // Default Task
