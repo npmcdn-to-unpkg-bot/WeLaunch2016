@@ -43,10 +43,7 @@ var grid = document.querySelector('.filter-grid');
 var iso = new Isotope( grid, {
   // options...
   itemSelector: '.folio-item',
-  layoutMode: 'fitRows',
-  fitRows: {
-    gutter : '16'
-  }
+  layoutMode: 'fitRows'
 });
 // init Isotope
 var $grid = $('.filter-grid').isotope({
@@ -56,10 +53,6 @@ $('.filter-btn').on( 'click', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
-
-
-
-
 
 // Work Filter Active
 $('.work-filter-list li').click(function(e) {

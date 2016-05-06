@@ -74,9 +74,6 @@ gulp.task('watch', function() {
     } );
 });
 
-gulp.task('start-styleguide', function () {
-  styleguide.startServer();
-});
 
 // Default Task
 gulp.task('default', ['sass', 'scripts', 'img', 'watch']);
