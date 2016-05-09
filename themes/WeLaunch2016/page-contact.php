@@ -38,8 +38,9 @@ get_header(); ?>
 			<div class="contact-info__block eq-height">
 				<div class="contact-info__content">
 					<?php the_field('say_hello_copy'); ?>
-					<form action="http://welaunch.createsend.com/t/d/s/tlhjy/" method="post" id="subForm">
-						<input placeholder="Subscribe to our newsletter" id="fieldEmail" type="text"><button type="submit"><i class="fa fa-chevron-right"></i></button>
+					<form action="http://welaunch.createsend.com/t/d/s/khdtkl/" method="post" id="subForm">
+				     <input placeholder="Subscribe to our newsletter" id="fieldEmail" name="cm-khdtkl-khdtkl" type="email" required />
+						 <button type="submit"><i class="fa fa-chevron-right"></i></button>
 					</form>
 				</div>
 			</div>			
