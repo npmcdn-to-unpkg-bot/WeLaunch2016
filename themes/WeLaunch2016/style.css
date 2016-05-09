@@ -1912,7 +1912,8 @@ footer .footer-social .fa {
   border-radius: 0;
   padding: .5em;
   border: 1px solid #e7e7e7;
-  box-shadow: none; }
+  box-shadow: none;
+  width: 75%; }
 
 .contact-form__wrapper .wpcf7 {
   padding-top: 5.625em; }
@@ -1926,7 +1927,8 @@ footer .footer-social .fa {
   border: 1px solid transparent;
   font-family: 'Nexa Bold', sans-serif;
   transition: all .3s ease;
-  display: inline-block; }
+  display: inline-block;
+  width: auto; }
   .contact-form__wrapper .wpcf7 input[type="submit"]:hover {
     background-color: transparent;
     color: #1d1d1d;

@@ -410,6 +410,7 @@
   padding:.5em;
   border:1px solid $grey;
   box-shadow: none;
+  width:75%;
 }
 .contact-form__wrapper .wpcf7 {
   padding-top:em(90);
@@ -424,6 +425,7 @@
   font-family:'Nexa Bold', sans-serif;
   transition:all .3s ease;
   display:inline-block; 
+  width:auto;
 
   &:hover {
     background-color:transparent;
