@@ -1701,13 +1701,23 @@ footer .footer-social .fa {
         clear: left; } }
 
 #about-us-clients .row {
-  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
   margin-top: 1.875em;
   margin-bottom: 1.875em; }
+  @media (min-width: 48em) {
+    #about-us-clients .row {
+      border: 0;
+      border-bottom: 1px solid #e7e7e7; } }
 
 .client-logo__wrap {
-  border-top: 1px solid #e7e7e7;
-  border-left: 1px solid #e7e7e7; }
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7; }
+  @media (min-width: 48em) {
+    .client-logo__wrap {
+      border: 0;
+      border-top: 1px solid #e7e7e7;
+      border-left: 1px solid #e7e7e7; } }
 
 .client-logo__wrap:nth-child(4n) {
   border-right: 1px solid #e7e7e7; }
