@@ -2464,7 +2464,8 @@ footer .footer-social .fa {
       display: block;
       margin-right: 1.14595%;
       width: 83.14234%;
-      margin-left: 8.42883%; }
+      margin-left: 8.42883%;
+      text-align: justify; }
       .blog-content__wrap:last-child {
         margin-right: 0; } }
 
