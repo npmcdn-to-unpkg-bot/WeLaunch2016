@@ -24,14 +24,14 @@ get_header(); ?>
 				<p>Discipline</p>
 				<ul class="work-filter-list clearfix">
 					<li><a class="filter-btn" data-filter="*">All</a></li>
-					<li><a class="filter-btn" data-filter=".Branding">Branding</a></li>
-					<li><a class="filter-btn" data-filter=".Digital">Digital</a></li>
-					<li><a class="filter-btn" data-filter=".Motion">Motion</a></li>
-					<li><a class="filter-btn" data-filter=".Print">Print</a></li>
-					<li><a class="filter-btn" data-filter=".Strategy">Strategy</a></li>
-					<li><a class="filter-btn" data-filter=".Strategy">Engagement</a></li>
-					<li><a class="filter-btn" data-filter=".Destination">Destination</a></li>
-					<li><a class="filter-btn" data-filter=".Events">Internal Comms</a></li>
+					<li><a class="filter-btn" data-filter=".branding">Branding</a></li>
+					<li><a class="filter-btn" data-filter=".digital">Digital</a></li>
+					<li><a class="filter-btn" data-filter=".strategy">Strategy</a></li>
+					<li><a class="filter-btn" data-filter=".print">Print</a></li>		
+					<li><a class="filter-btn" data-filter=".motion">Motion</a></li>		
+					<li><a class="filter-btn" data-filter=".destination">Destination</a></li>		
+					<li><a class="filter-btn" data-filter=".comms">Internal Communications</a></li>			
+					<li><a class="filter-btn" data-filter=".engage">Stakeholder Engagement</a></li>										
 				</ul>
 			</div>
 			<div class="work-filer__sector">
@@ -61,7 +61,7 @@ get_header(); ?>
 		<?php foreach( $the_query as $post): // variable must be called $post (IMPORTANT) ?>
 			<?php setup_postdata($post); ?>
 		<?php $terms = get_the_terms($post->ID, "industry_sectors"); ?>	
-			<a class="folio-item filter-item <?php the_field('discipline'); ?> <?php foreach ( $terms as $term ) { echo $term->slug . ' '; } ?> <?php echo get_the_time('Y'); ?>"href="<?php the_permalink(); ?>">
+			<a class="folio-item filter-item <?php echo implode(' ', get_field('discipline2')); ?> <?php foreach ( $terms as $term ) { echo $term->slug . ' '; } ?> <?php echo get_the_time('Y'); ?>"href="<?php the_permalink(); ?>">
 				<!-- <div class="folio-item__inner" style="background-image: url('<?php //$image_id = get_post_thumbnail_id();$image_url = wp_get_attachment_image_src($image_id,'large', true);echo $image_url[0];  ?>');" href="<?php the_permalink(); ?>"></div> -->
 				<?php the_post_thumbnail(); ?>
 			</a>
