@@ -30,6 +30,7 @@ get_header(); ?>
 					<li><a class="filter-btn" data-filter=".Print">Print</a></li>
 					<li><a class="filter-btn" data-filter=".Strategy">Strategy</a></li>
 					<li><a class="filter-btn" data-filter=".Strategy">Engagement</a></li>
+					<li><a class="filter-btn" data-filter=".Destination">Destination</a></li>
 					<li><a class="filter-btn" data-filter=".Events">Internal Comms</a></li>
 				</ul>
 			</div>
@@ -43,7 +44,7 @@ get_header(); ?>
 					?>
 					<?php
 					foreach ($tax_terms as $tax_term) {
-					echo '<li>' . '<a class="filter-btn" href="" data-id=".'. $tax_term->slug. '" title="' . sprintf( __( "View all posts in %s" ), $tax_term->name ) . '" ' . '>' . $tax_term->name.'</a></li>';
+					echo '<li>' . '<a class="filter-btn" href="" data-filter=".'. $tax_term->slug. '" title="' . sprintf( __( "View all posts in %s" ), $tax_term->name ) . '" ' . '>' . $tax_term->name.'</a></li>';
 					}
 					?>
 				 </ul>
