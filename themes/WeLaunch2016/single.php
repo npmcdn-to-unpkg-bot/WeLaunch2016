@@ -20,7 +20,7 @@ get_header(); ?>
 			<a href="<?php echo home_url('/news'); ?>" class="blog-bk-tag">Back to Blog</a>
 			<div class="text-center">
 				<h1><?php the_title(); ?></h1>
-				<p class="small"><strong><?php name_posted_on(); ?></strong></p>
+				<p class="small"><strong><?php echo get_the_date(); ?></strong></p>
 			</div>
 
 			<div class="blog-content__wrap">
