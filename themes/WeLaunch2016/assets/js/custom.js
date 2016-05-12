@@ -38,18 +38,28 @@ $(window).resize(function(){
 });
 
 
-// Isotope
-var grid = document.querySelector('.filter-grid');
-var iso = new Isotope( grid, {
-  // options...
-  itemSelector: '.folio-item',
-  percentPosition: true,
-  layoutMode: 'masonry'
+
+// // init Isotope
+// var $grid = $('.filter-grid').isotope({
+//   itemSelector: '.folio-item',
+//   percentPosition: true,
+//   layoutMode: 'masonry'
+// });
+// $grid.imagesLoaded().progress( function() {
+//   $grid.isotope('layout');
+// });
+
+var $grid = $('.filter-grid').imagesLoaded( function() {
+  // init Isotope after all images have loaded
+  $grid.isotope({
+    itemSelector: '.folio-item',
+    percentPosition: true,
+    layoutMode: 'masonry'
+  });
 });
-// init Isotope
-var $grid = $('.filter-grid').isotope({
-  // options
-});
+
+
+
 $('.filter-btn').on( 'click', function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
