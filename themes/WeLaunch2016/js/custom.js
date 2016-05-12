@@ -3557,7 +3557,8 @@ var grid = document.querySelector('.filter-grid');
 var iso = new Isotope( grid, {
   // options...
   itemSelector: '.folio-item',
-  layoutMode: 'fitRows'
+  percentPosition: true,
+  layoutMode: 'masonry'
 });
 // init Isotope
 var $grid = $('.filter-grid').isotope({
