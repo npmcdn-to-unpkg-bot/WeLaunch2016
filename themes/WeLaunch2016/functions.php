@@ -120,7 +120,7 @@ function WeLaunch2016_scripts() {
 	wp_enqueue_style( 'WeLaunch2016-style', get_stylesheet_uri() );
 
 	wp_enqueue_script('jquery-google','https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js','','',true);
-	wp_enqueue_script('isotope','https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js','','',true);
+	wp_enqueue_script('isotope','https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js','','',true);
 	wp_enqueue_script('bootstrap-js','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js','','',true);
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/js/custom.js', array(), '', true );
 
